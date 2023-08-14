@@ -1,6 +1,7 @@
 version: 1
-send_anonymous_usage_stats: true
-project_id: tap-suiteql
+send_anonymous_usage_stats: false
+default_environment: dev
+project_id: tap-suiteq
 plugins:
   extractors:
   - name: tap-suiteql
@@ -30,3 +31,7 @@ plugins:
   - name: target-jsonl
     variant: andyh1203
     pip_url: target-jsonl
+environments:
+- name: dev
+- name: staging
+- name: prod
