@@ -247,7 +247,7 @@ class ItemStream(suiteqlStream):
         th.Property("itemid", th.StringType),
         th.Property("itemrevenuecategory", th.StringType),
         th.Property("itemtype", th.StringType),
-        th.Property("lastmodifieddate", th.DateType),
+        th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("lastpurchaseprice", th.StringType),
         th.Property("location", th.StringType),
         th.Property("manufacturer", th.StringType),
