@@ -10,7 +10,7 @@ class AccountingBookStream(suiteqlStream):
     '''
     name = "accountingbooks"
     path = "/query/v1/suiteql"
-    entity_name = "accountingbook"
+    entity_name = "accounting_book"
     primary_keys = ["id"]
     schema = th.PropertiesList(
         th.Property("id", th.StringType),
@@ -48,7 +48,7 @@ class AccountingPeriodStream(suiteqlStream):
     '''
     246 records in NetSuite
     '''
-    name = "accountingperiods"
+    name = "accounting_periods"
     path = "/query/v1/suiteql"
     entity_name = "accountingperiod"
     primary_keys = ["id"]
@@ -328,7 +328,7 @@ class VendorTypeStream(suiteqlStream):
     '''
     12 vendor types in NetSuite
     '''
-    name = "vendortypes"
+    name = "vendor_types"
     path = "/query/v1/suiteql"
     entity_name = "customlist378"
     metadata_path = "/record/v1/metadata-catalog/customlist378"
