@@ -22,6 +22,13 @@ class SchemaBuilder:
 
     def _get_attributes_dict(self) -> dict:
         records = self.stream.get_metadata()
+        #print((records.keys()))
+
+        #for k,v in records.items():
+            #print(f"""\nk: {k}: v: {v}\n""")
+
+        #if len(records["x-ns-filterable"]) > 0:
+            #print(records.keys())
 
         attributes = [
             record
@@ -29,10 +36,17 @@ class SchemaBuilder:
             if record not in self.stream.skip_attributes
         ]
 
+        #n = 1
+        #for i in attributes:
+            #print(f"""{n}. {i}\n""")
+
         attributes_dict = {
             attribute: records["properties"][attribute].get("format")
             for attribute in attributes
         }
+
+        #for k,v in attributes_dict.items():
+            #print(f"""\nk: {k}: v: {v}\n""")
 
         return attributes_dict
 
