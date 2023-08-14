@@ -167,7 +167,7 @@ class ItemStream(suiteqlStream):
     '''
     169 items in NetSuite
     '''
-    name = "Items"
+    name = "Item"
     path = "/query/v1/suiteql"
     entity_name = "item"
     primary_keys = ["id"]
