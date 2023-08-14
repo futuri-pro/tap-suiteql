@@ -169,7 +169,7 @@ class ItemStream(suiteqlStream):
     '''
     name = "Items"
     path = "/query/v1/suiteql"
-    entity_name = "generalizeditem"
+    entity_name = "item"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
