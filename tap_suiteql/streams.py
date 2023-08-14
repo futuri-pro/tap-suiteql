@@ -8,7 +8,7 @@ class AccountingBookStream(suiteqlStream):
     '''
     1 records in NetSuite
     '''
-    name = "accountingbook"
+    name = "accountingbooks"
     path = "/query/v1/suiteql"
     entity_name = "accountingbook"
     primary_keys = ["id"]
@@ -48,7 +48,7 @@ class AccountingPeriodStream(suiteqlStream):
     '''
     246 records in NetSuite
     '''
-    name = "accountingperiod"
+    name = "accountingperiods"
     path = "/query/v1/suiteql"
     entity_name = "accountingperiod"
     primary_keys = ["id"]
@@ -77,7 +77,7 @@ class AccountStream(suiteqlStream):
     '''
     366 records in NetSuite
     '''
-    name = "account"
+    name = "accounts"
     path = "/query/v1/suiteql"
     entity_name = "account"
     primary_keys = ["id"]
@@ -118,7 +118,7 @@ class CustomerStream(suiteqlStream):
     '''
     28,318 records in NetSuite
     '''
-    name = "customer"
+    name = "customers"
     path = "/query/v1/suiteql"
     entity_name = "customer"
     metadata_path = "/record/v1/metadata-catalog/customer"
@@ -131,7 +131,7 @@ class ClassStream(suiteqlStream):
     '''
     33 records in NetSuite
     '''
-    name = "class"
+    name = "classes"
     path = "/query/v1/suiteql"
     entity_name = "classification"
     primary_keys = ["id"]
@@ -167,7 +167,7 @@ class ItemStream(suiteqlStream):
     '''
     169 items in NetSuite
     '''
-    name = "item"
+    name = "items"
     path = "/query/v1/suiteql"
     entity_name = "item"
     primary_keys = ["id"]
@@ -316,7 +316,7 @@ class VendorStream(suiteqlStream):
     '''
     765 vendors in NetSuite
     '''
-    name = "vendor"
+    name = "vendors"
     path = "/query/v1/suiteql"
     entity_name = "vendor"
     metadata_path = "/record/v1/metadata-catalog/vendor"
@@ -328,7 +328,7 @@ class VendorTypeStream(suiteqlStream):
     '''
     12 vendor types in NetSuite
     '''
-    name = "vendortype"
+    name = "vendortypes"
     path = "/query/v1/suiteql"
     entity_name = "customlist378"
     metadata_path = "/record/v1/metadata-catalog/customlist378"
@@ -340,7 +340,7 @@ class CurrencyStream(suiteqlStream):
     '''
     20 records in NetSuite
     '''
-    name = "currency"
+    name = "currencies"
     path = "/query/v1/suiteql"
     entity_name = "currency"
     primary_keys = ["id"]
@@ -388,7 +388,7 @@ class DepartmentStream(suiteqlStream):
     '''
     26 records in NetSuite
     '''
-    name = "department"
+    name = "departments"
     path = "/query/v1/suiteql"
     entity_name = "department"
     primary_keys = ["id"]
@@ -407,7 +407,7 @@ class EntityStream(suiteqlStream):
     '''
     65000 records in NetSuite
     '''
-    name = "entity"
+    name = "entities"
     path = "/query/v1/suiteql"
     entity_name = "entity"
     primary_keys = ["id"]
@@ -451,7 +451,7 @@ class SubsidiaryStream(suiteqlStream):
     '''
     26 records in NetSuite
     '''
-    name = "subsidiary"
+    name = "subsidiaries"
     path = "/query/v1/suiteql"
     entity_name = "subsidiary"
     metadata_path = "/record/v1/metadata-catalog/subsidiary"
@@ -483,7 +483,7 @@ class JournalEntryStream(suiteqlStream):
     '''
     27,806 records in NetSuite
     '''
-    name = "journalentry"
+    name = "journalentries"
     entity_name = "transaction"
     path = "/query/v1/suiteql"
     metadata_path = "/record/v1/metadata-catalog/journalentry"
@@ -499,7 +499,7 @@ class EmployeeStream(suiteqlStream):
     '''
     130 records in NetSuite
     '''
-    name = "employee"
+    name = "employees"
     path = "/query/v1/suiteql"
     entity_name = "employee"
     metadata_path = "/record/v1/metadata-catalog/employee"
@@ -513,7 +513,7 @@ class ProductIDStream(suiteqlStream):
     '''
     20 records in NetSuite
     '''
-    name = "productid"
+    name = "productids"
     path = "/query/v1/suiteql"
     entity_name = "customlist368"
     primary_keys = ["id"]
@@ -545,7 +545,7 @@ class PSMStream(suiteqlStream):
     '''
     20 records in NetSuite
     '''
-    name = "psm"
+    name = "psms"
     path = "/query/v1/suiteql"
     entity_name = "customlist245"
     primary_keys = ["id"]
@@ -594,7 +594,7 @@ class AccountHierarchyLevelStream(suiteqlStream):
     '''
     20 records in NetSuite
     '''
-    name = "accounthierarchylevel"
+    name = "accounthierarchylevels"
     path = "/query/v1/suiteql"
     entity_name = "customlist220"
     primary_keys = ["id"]
@@ -629,7 +629,7 @@ class ContractStream(suiteqlStream):
     '''
     3,651 contracts in NetSuite
     '''
-    name = "contract"
+    name = "contracts"
     path = "/query/v1/suiteql"
     entity_name = "customrecord_contracts"
     metadata_path = "/record/v1/metadata-catalog/customrecord_contracts"
@@ -642,7 +642,7 @@ class ContractItemStream(suiteqlStream):
     '''
     13,465 contract items in NetSuite
     '''
-    name = "contractitem"
+    name = "contractitems"
     path = "/query/v1/suiteql"
     entity_name = "customrecord_contract_item"
     metadata_path = "/record/v1/metadata-catalog/customrecord_contract_item"
