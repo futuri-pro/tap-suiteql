@@ -113,6 +113,28 @@ class AccountStream(suiteqlStream):
         th.Property("sspecacct", th.StringType),
     ).to_dict()
 
+class ConsolidatedExchangeRateStream(suiteqlStream):
+    '''
+    1750 records in NetSuite
+    '''
+    name = "consolidated_exchange_rates"
+    path = "/query/v1/suiteql"
+    entity_name = "consolidatedexchangerate"
+    primary_keys = ["id"]
+    schema = th.PropertiesList(
+        th.Property("accountingbook", th.StringType),
+        th.Property("averagerate", th.StringType),
+        th.Property("currentrate", th.StringType),
+        th.Property("externalid", th.StringType),
+        th.Property("fromcurrency", th.StringType),
+        th.Property("fromsubsidiary", th.StringType),
+        th.Property("historicalrate", th.StringType),
+        th.Property("id", th.StringType),
+        th.Property("postingperiod", th.StringType),
+        th.Property("tocurrency", th.StringType),
+        th.Property("tosubsidiary", th.StringType),
+    ).to_dict()
+
 
 class CustomerStream(suiteqlStream):
     '''
