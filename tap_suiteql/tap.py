@@ -34,6 +34,7 @@ from tap_suiteql.streams import (
     ProductStandingStream,
     ProductStatusStream,
     SubsidiaryStream,
+    TransactionLineStream,
     VendorStream,
     VendorTypeStream,
 )
@@ -64,6 +65,7 @@ STREAM_TYPES = {
     "ProductStanding": ProductStandingStream,
     "ProductStatus": ProductStatusStream,
     "Subsidiary": SubsidiaryStream,
+    "TransactionLine": TransactionLineStream,
     "Vendor": VendorStream,
     "VendorType": VendorTypeStream,
 }
