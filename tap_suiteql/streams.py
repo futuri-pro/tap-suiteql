@@ -332,6 +332,34 @@ class ItemStream(suiteqlStream):
         th.Property("wipvarianceacct", th.StringType),
     ).to_dict()
 
+
+class LocationStream(suiteqlStream):
+    '''
+    1750 records in NetSuite
+    '''
+    name = "locations"
+    path = "/query/v1/suiteql"
+    entity_name = "location"
+    primary_keys = ["id"]
+    schema = th.PropertiesList(
+        th.Property("externalid", th.StringType),
+        th.Property("fullname", th.StringType),
+        th.Property("id", th.StringType),
+        th.Property("includechildren", th.StringType),
+        th.Property("isinactive", th.StringType),
+        th.Property("lastmodifieddate", th.StringType),
+        th.Property("latitude", th.StringType),
+        th.Property("locationtype", th.StringType),
+        th.Property("longitude", th.StringType),
+        th.Property("mainaddress", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("parent", th.StringType),
+        th.Property("returnaddress", th.StringType),
+        th.Property("subsidiary", th.StringType),
+        th.Property("tranprefix", th.StringType),
+    ).to_dict()
+    
+
 class TransactionLineStream(suiteqlStream):
     '''
     1750 records in NetSuite
