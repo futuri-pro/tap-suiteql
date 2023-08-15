@@ -367,7 +367,7 @@ class TransactionLineStream(suiteqlStream):
     name = "transaction_lines"
     path = "/query/v1/suiteql"
     entity_name = "transactionline"
-    primary_keys = ["id"]
+    primary_keys = ["uniquekey"]
     replication_key = "linelastmodifieddate"
     schema = th.PropertiesList(
         th.Property("accountinglinetype", th.StringType),
