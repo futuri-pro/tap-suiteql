@@ -8,7 +8,7 @@ class AccountingBookStream(suiteqlStream):
     '''
     1 records in NetSuite
     '''
-    name = "accountingbooks"
+    name = "accounting_books"
     path = "/query/v1/suiteql"
     entity_name = "accounting_book"
     primary_keys = ["id"]
