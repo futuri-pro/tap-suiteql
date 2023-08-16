@@ -700,7 +700,7 @@ class TransactionStream(suiteqlStream):
         th.Property("custbody23", th.DateType),
         th.Property("custbody24", th.DateType),
         th.Property("custbody25", th.DateType),
-        th.Property("custbody26", th.DateType),
+        th.Property("custbody26", th.StringType),
         th.Property("custbody27", th.StringType),
         th.Property("custbody28", th.StringType),
         th.Property("custbody29", th.StringType),
