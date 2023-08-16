@@ -158,10 +158,10 @@ class ClassStream(suiteqlStream):
     entity_name = "classification"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("isinactive", th.BooleanType),
+        th.Property("isinactive", th.StringType),
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
-        th.Property("includechildren", th.BooleanType),
+        th.Property("includechildren", th.StringType),
         th.Property("id", th.StringType),
         th.Property("lastmodifiedate", th.DateType),
         th.Property("name", th.StringType),
