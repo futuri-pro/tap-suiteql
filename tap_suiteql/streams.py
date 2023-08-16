@@ -10,7 +10,7 @@ class AccountingBookStream(suiteqlStream):
     '''
     name = "accounting_books"
     path = "/query/v1/suiteql"
-    entity_name = "accounting_book"
+    entity_name = "accountingbook"
     primary_keys = ["id"]
     schema = th.PropertiesList(
         th.Property("id", th.StringType),
