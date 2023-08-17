@@ -31,6 +31,16 @@ plugins:
   - name: target-jsonl
     variant: andyh1203
     pip_url: target-jsonl
+  mappers:
+  - name: meltano-map-transformer
+    pip_url: "git+https://github.com/MeltanoLabs/meltano-map-transform.git"
+    executable: meltano-map-transform
+    mappings:
+    - name: update_ids
+      config:
+        stream_maps:
+          account:
+            id: int(id)
 environments:
 - name: dev
 - name: staging
