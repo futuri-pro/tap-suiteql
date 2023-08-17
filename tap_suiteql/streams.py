@@ -163,7 +163,7 @@ class ClassStream(suiteqlStream):
         th.Property("fullname", th.StringType),
         th.Property("includechildren", th.StringType),
         th.Property("id", th.StringType),
-        th.Property("lastmodifiedate", th.DateType),
+        th.Property("lastmodifieddate", th.DateType),
         th.Property("name", th.StringType),
         th.Property("parent", th.StringType),
     ).to_dict()
