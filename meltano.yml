@@ -46,6 +46,45 @@ plugins:
             hash_id: md5(str(id))
             __key_properties__: ["hash_id"]
 environments:
-- name: dev
-- name: staging
-- name: prod
+  - name: dev
+    config:
+      plugins:
+        extractors:
+          - name: tap-suiteql
+            namespace: netsuite
+            pip_url: -e .
+            capabilities:
+            - properties
+            - state
+            - catalog
+            - discover
+            settings:
+            - name: account_id
+              env: TAP_SUITEQL_ACCOUNT_ID
+            - name: consumer_key
+              env: TAP_SUITEQL_CONSUMER_KEY
+            - name: consumer_secret
+              env: TAP_SUITEQL_CONSUMER_SECRET
+            - name: token_id
+              env: TAP_SUITEQL_TOKEN_ID
+            - name: token_secret
+              env: TAP_SUITEQL_TOKEN_SECRET
+            - name: base_url
+              env: TAP_SUITEQL_BASE_URL
+            - name: start_date
+              env: TAP_SUITEQL_START_DATE
+            select:
+              - account.*
+              - "!trans*.*_url"
+            metadata:
+              account:
+                replication-method: FULL_TABLE
+                replication-key: id
+              customer:
+                replication-method: INCREMENTAL
+              "*":
+                replication-method: INCREMENTAL
+              "*_full":
+                replication-method: FULL_TABLE
+  - name: staging
+  - name: prod
