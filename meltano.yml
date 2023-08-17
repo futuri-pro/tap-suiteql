@@ -27,9 +27,6 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
-    select:
-      - account.*
-      - "!trans*.*_url"
     metadata:
       account:
         replication-method: FULL_TABLE
