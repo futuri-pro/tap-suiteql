@@ -86,5 +86,19 @@ environments:
                 replication-method: INCREMENTAL
               "*_full":
                 replication-method: FULL_TABLE
+        mappers:
+          - name: meltano-map-transformer
+            pip_url: "git+https://github.com/MeltanoLabs/meltano-map-transform.git"
+            executable: meltano-map-transform
+            mappings:
+            - name: update_ids
+              config:
+                stream_maps:
+                  account:
+                    id: int(id)
+                    _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+                    __alias__: accounts
+                    hash_id: md5(str(id))
+                    __key_properties__: ["hash_id"]
   - name: staging
   - name: prod
