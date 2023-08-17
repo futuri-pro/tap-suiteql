@@ -27,6 +27,14 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
+    config:
+      stream_maps:
+        account:
+          id: int(id)
+          #_fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+          __alias__: account
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
     # metadata:
     #   account:
     #     replication-method: FULL_TABLE
@@ -45,14 +53,6 @@ plugins:
   - name: target-postgres
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/target-postgres.git
-    config:
-      stream_maps:
-        account:
-          id: int(id)
-          #_fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-          __alias__: accounts
-          hash_id: md5(str(id))
-          __key_properties__: ["hash_id"]
     # settings:
     # - name: add_record_metadata
     #   env: TARGET_POSTGRES_ADD_RECORD_METADATA
