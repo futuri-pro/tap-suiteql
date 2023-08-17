@@ -27,10 +27,62 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
+    select:
+      - account.*
+      - "!trans*.*_url"
+    metadata:
+      account:
+        replication-method: FULL_TABLE
+        replication-key: id
+      customer:
+        replication-method: INCREMENTAL
+      "*":
+        replication-method: INCREMENTAL
+      "*_full":
+        replication-method: FULL_TABLE
+
   loaders:
   - name: target-jsonl
     variant: andyh1203
     pip_url: target-jsonl
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/target-postgres.git
+    settings:
+    - name: add_record_metadata
+      env: TARGET_POSTGRES_ADD_RECORD_METADATA
+    - name: database
+      env: TARGET_POSTGRES_DATABASE
+    - name: default_target_schema
+      env: TARGET_POSTGRES_DEFAULT_TARGET_SCHEMA
+    - name: dialect+driver
+      env: TARGET_POSTGRES_DIALECT_DRIVER
+    - name: flattening_enabled
+      env: TARGET_POSTGRES_FLATTENING_ENABLED
+    - name: flattening_max_depth
+      env: TARGET_POSTGRES_FLATTENING_MAX_DEPTH
+    - name: hard_delete
+      env: TARGET_POSTGRES_HARD_DELETE
+    - name: host
+      env: TARGET_POSTGRES_HOST
+    - name: user
+      env: TARGET_POSTGRES_USER
+    - name: password
+      env: TARGET_POSTGRES_PASSWORD
+    - name: port
+      env: TARGET_POSTGRES_PORT
+    - name: stream_map_config
+      env: TARGET_POSTGRES_STREAM_MAP_CONFIG
+    - name: stream_maps
+      env: TARGET_POSTGRES_STREAM_MAPS
+    config:
+      stream_maps:
+        account:
+          id: int(id)
+          _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+          __alias__: accounts
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
 
 
 
@@ -47,15 +99,6 @@ plugins:
     - name: stream_maps
       kind: object
     mappings:
-    - name: update_ids
-      config:
-        stream_maps:
-          account:
-            id: int(id)
-            _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-            __alias__: accounts
-            hash_id: md5(str(id))
-            __key_properties__: ["hash_id"]
     - name: hash_email
       config:
         stream_maps:
@@ -129,60 +172,21 @@ plugins:
           Wisden: mask-4
           Loyndon: Mask-2
 
-  mapper:
-  - name: meltano-map-transformer
-    pip_url: "git+https://github.com/MeltanoLabs/meltano-map-transform.git"
-    executable: meltano-map-transform
-    mappings:
-    - name: update_ids
-      config:
-        stream_maps:
-          account:
-            id: int(id)
-            _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-            __alias__: accounts
-            hash_id: md5(str(id))
-            __key_properties__: ["hash_id"]
+  # mapper:
+  # - name: meltano-map-transformer
+  #   pip_url: "git+https://github.com/MeltanoLabs/meltano-map-transform.git"
+  #   executable: meltano-map-transform
+  #   mappings:
+  #   - name: update_ids
+  #     config:
+  #       stream_maps:
+  #         account:
+  #           id: int(id)
+  #           _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+  #           __alias__: accounts
+  #           hash_id: md5(str(id))
+  #           __key_properties__: ["hash_id"]
 environments:
   - name: dev
-    config:
-      plugins:
-        extractors:
-          - name: tap-suiteql
-            namespace: netsuite
-            pip_url: -e .
-            capabilities:
-            - properties
-            - state
-            - catalog
-            - discover
-            settings:
-            - name: account_id
-              env: TAP_SUITEQL_ACCOUNT_ID
-            - name: consumer_key
-              env: TAP_SUITEQL_CONSUMER_KEY
-            - name: consumer_secret
-              env: TAP_SUITEQL_CONSUMER_SECRET
-            - name: token_id
-              env: TAP_SUITEQL_TOKEN_ID
-            - name: token_secret
-              env: TAP_SUITEQL_TOKEN_SECRET
-            - name: base_url
-              env: TAP_SUITEQL_BASE_URL
-            - name: start_date
-              env: TAP_SUITEQL_START_DATE
-            select:
-              - account.*
-              - "!trans*.*_url"
-            metadata:
-              account:
-                replication-method: FULL_TABLE
-                replication-key: id
-              customer:
-                replication-method: INCREMENTAL
-              "*":
-                replication-method: INCREMENTAL
-              "*_full":
-                replication-method: FULL_TABLE
   - name: staging
   - name: prod
