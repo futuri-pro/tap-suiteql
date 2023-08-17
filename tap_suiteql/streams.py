@@ -14,7 +14,7 @@ class AccountStream(suiteqlStream):
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("accountsearchdisplayname", th.StringType),
         th.Property("accountsearchdisplaynamecopy", th.StringType),
         th.Property("acctnumber", th.StringType),
@@ -55,7 +55,7 @@ class AccountingBookStream(suiteqlStream):
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("basebook", th.StringType),
         th.Property("contingentrevenuehandling", th.BooleanType),
         th.Property("effectiveperiod", th.StringType),
@@ -101,7 +101,7 @@ class AccountingPeriodStream(suiteqlStream):
         th.Property("closed", th.BooleanType),
         th.Property("closedondate", th.DateType),
         th.Property("enddate", th.DateType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isadjust", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
         th.Property("isposting", th.BooleanType),
@@ -123,7 +123,7 @@ class AccountingPeriodFiscalCalendarsStream(suiteqlStream):
     entity_name = "accountingperiodfiscalcalendars"
     primary_keys = ["accountingperiod"]
     schema = th.PropertiesList(
-        th.Property("accountingperiod", th.IntegerType),
+        th.Property("accountingperiod", th.StringType),
         th.Property("fiscalcalendar", th.StringType),
         th.Property("fullname", th.StringType),
         th.Property("parent", th.StringType),
@@ -144,7 +144,7 @@ class AccountTypeStream(suiteqlStream):
         th.Property("eliminationalgo", th.StringType),
         th.Property("id", th.StringType),
         th.Property("includeinrevaldefault", th.BooleanType),
-        th.Property("internalid", th.IntegerType),
+        th.Property("internalid", th.StringType),
         th.Property("left", th.BooleanType),
         th.Property("longname", th.StringType),
         th.Property("seqnum", th.StringType),
@@ -165,7 +165,7 @@ class ClassificationStream(suiteqlStream):
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
         th.Property("includechildren", th.BooleanType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
         th.Property("parent", th.StringType),
@@ -187,7 +187,7 @@ class ConsolidatedExchangeRateStream(suiteqlStream):
         th.Property("fromcurrency", th.StringType),
         th.Property("fromsubsidiary", th.StringType),
         th.Property("historicalrate", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("postingperiod", th.StringType),
         th.Property("tocurrency", th.StringType),
         th.Property("tosubsidiary", th.StringType),
@@ -207,7 +207,7 @@ class CurrencyStream(suiteqlStream):
         th.Property("currencyprecision", th.StringType),
         th.Property("displaysymbol", th.StringType),
         th.Property("exchangerate", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("includeinfxrateupdates", th.BooleanType),
         th.Property("isbasecurrency", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
@@ -244,7 +244,7 @@ class DepartmentStream(suiteqlStream):
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("includechildren", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
@@ -279,7 +279,7 @@ class EntityStream(suiteqlStream):
         th.Property("firstname", th.StringType),
         th.Property("group", th.StringType),
         th.Property("homephone", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("isperson", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
@@ -318,9 +318,9 @@ class EntityAddressStream(suiteqlStream):
         th.Property("country", th.StringType),
         th.Property("dropdownstate", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("nkey", th.IntegerType),
+        th.Property("nkey", th.StringType),
         th.Property("override", th.BooleanType),
-        th.Property("recordowner", th.IntegerType),
+        th.Property("recordowner", th.StringType),
         th.Property("state", th.StringType),
         th.Property("zip", th.StringType),
     ).to_dict()
@@ -397,7 +397,7 @@ class ItemStream(suiteqlStream):
         th.Property("gainlossaccount", th.StringType),
         th.Property("generateaccruals", th.BooleanType),
         th.Property("handlingcost", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("includechildren", th.BooleanType),
         th.Property("incomeaccount", th.StringType),
         th.Property("intercodefrevaccount", th.StringType),
@@ -485,7 +485,7 @@ class LocationStream(suiteqlStream):
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("includechildren", th.StringType),
         th.Property("isinactive", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
@@ -522,9 +522,9 @@ class LocationMainAddressStream(suiteqlStream):
         th.Property("country", th.StringType),
         th.Property("dropdownstate", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("nkey", th.IntegerType),
+        th.Property("nkey", th.StringType),
         th.Property("override", th.BooleanType),
-        th.Property("recordowner", th.IntegerType),
+        th.Property("recordowner", th.StringType),
         th.Property("state", th.StringType),
         th.Property("zip", th.StringType),
     ).to_dict()
@@ -730,7 +730,7 @@ class TransactionStream(suiteqlStream):
         th.Property("fulfillmenttype", th.StringType),
         th.Property("fxaltsalestotal", th.StringType),
         th.Property("fxnetaltsalestotal", th.StringType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("includeinforecast", th.StringType),
         th.Property("incoterm", th.StringType),
         th.Property("intercostatus", th.StringType),
@@ -973,7 +973,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("transaction", th.StringType),
         th.Property("transactiondiscount", th.BooleanType),
         th.Property("transactionlinetype", th.StringType),
-        th.Property("uniquekey", th.IntegerType),
+        th.Property("uniquekey", th.StringType),
         th.Property("units", th.StringType),
         th.Property("vsoedelivered", th.BooleanType),
         th.Property("vsoeisestimate", th.BooleanType),
@@ -1010,7 +1010,7 @@ class VendorCategoryStream(suiteqlStream):
         th.Property("isinactive", th.BooleanType),
         th.Property("externalid", th.StringType),
         th.Property("istaxagency", th.BooleanType),
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
     ).to_dict()
@@ -1086,7 +1086,7 @@ class ProductIDStream(suiteqlStream):
     entity_name = "customlist368"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1102,7 +1102,7 @@ class ProductStandingStream(suiteqlStream):
     entity_name = "customlist248"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1118,7 +1118,7 @@ class PSMStream(suiteqlStream):
     entity_name = "customlist245"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1134,7 +1134,7 @@ class ContractStatusStream(suiteqlStream):
     entity_name = "customlist254"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1150,7 +1150,7 @@ class ProductStatusStream(suiteqlStream):
     entity_name = "customlist247"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1167,7 +1167,7 @@ class AccountHierarchyLevelStream(suiteqlStream):
     entity_name = "customlist220"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),
@@ -1184,7 +1184,7 @@ class AutomationSystemsStream(suiteqlStream):
     entity_name = "customlist227"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("id", th.IntegerType),
+        th.Property("id", th.StringType),
         th.Property("isinactive", th.BooleanType),
         th.Property("name", th.StringType),
         th.Property("recordid", th.StringType),

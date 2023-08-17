@@ -27,78 +27,78 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
-    config:
-      stream_maps:
-        account:
-          id: int(id)
-          # _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-          # __alias__: account
-          # hash_id: md5(str(id))
-          # __key_properties__: ["hash_id"]
-        accounthierarchylevels:
-          id: int(id)
-        accountingbook:
-          id: int(id)
-        accountingperiod:
-          accountingperiod: int(accountingperiod)
-        accountingperiodfiscalcalendars:
-          id: int(id)
-        accounttype:
-          internalid: int(internalid)
-        automationsystems:
-          id: int(id)
-        classification:
-          id: int(id)
-        consolidatedexchangerate:
-          id: int(id)
-        contractitems:
-          id: int(id)
-        contracts:
-          id: int(id)
-        contractstatus:
-          id: int(id)
-        currency:
-          id: int(id)
-        customers:
-          id: int(id)
-        department:
-          id: int(id)
-        employees:
-          id: int(id)
-        entity:
-          id: int(id)
-        entityaddress:
-          nkey: int(nkey)
-          recordowner: int(recordowner)
-        item:
-          id: int(id)
-        journalentries:
-          id: int(id)
-        location:
-          id: int(id)
-        locationmainaddress:
-          nkey: int(nkey)
-          recordowner: int(recordowner)
-        productids:
-          id: int(id)
-        productstanding:
-          id: int(id)
-        productstatus:
-          id: int(id)
-        psms:
-          id: int(id)
-        subsidiary:
-          id: int(id)
-        transaction_lines:
-          uniquekey: int(uniquekey)
-        transactions:
-          id: int(id)
-        vendor_types:
-          id: int(id)
-        vendorcategory:
-          id: int(id)
-        vendors:
-          id: int(id)
+    # config:
+    #   stream_maps:
+    #     account:
+    #       id: int(id)
+    #       # _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+    #       # __alias__: account
+    #       # hash_id: md5(str(id))
+    #       # __key_properties__: ["hash_id"]
+    #     accounthierarchylevels:
+    #       id: int(id)
+    #     accountingbook:
+    #       id: int(id)
+    #     accountingperiod:
+    #       accountingperiod: int(accountingperiod)
+    #     accountingperiodfiscalcalendars:
+    #       id: int(id)
+    #     accounttype:
+    #       internalid: int(internalid)
+    #     automationsystems:
+    #       id: int(id)
+    #     classification:
+    #       id: int(id)
+    #     consolidatedexchangerate:
+    #       id: int(id)
+    #     contractitems:
+    #       id: int(id)
+    #     contracts:
+    #       id: int(id)
+    #     contractstatus:
+    #       id: int(id)
+    #     currency:
+    #       id: int(id)
+    #     customers:
+    #       id: int(id)
+    #     department:
+    #       id: int(id)
+    #     employees:
+    #       id: int(id)
+    #     entity:
+    #       id: int(id)
+    #     entityaddress:
+    #       nkey: int(nkey)
+    #       recordowner: int(recordowner)
+    #     item:
+    #       id: int(id)
+    #     journalentries:
+    #       id: int(id)
+    #     location:
+    #       id: int(id)
+    #     locationmainaddress:
+    #       nkey: int(nkey)
+    #       recordowner: int(recordowner)
+    #     productids:
+    #       id: int(id)
+    #     productstanding:
+    #       id: int(id)
+    #     productstatus:
+    #       id: int(id)
+    #     psms:
+    #       id: int(id)
+    #     subsidiary:
+    #       id: int(id)
+    #     transaction_lines:
+    #       uniquekey: int(uniquekey)
+    #     transactions:
+    #       id: int(id)
+    #     vendor_types:
+    #       id: int(id)
+    #     vendorcategory:
+    #       id: int(id)
+    #     vendors:
+    #       id: int(id)
     # metadata:
     #   account:
     #     replication-method: FULL_TABLE
