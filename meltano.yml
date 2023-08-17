@@ -102,6 +102,7 @@ plugins:
           # Convert `id` to integer
           account:
             id: int(id)
+            parent: int(parent)
             #_fivetran_deleted: "true if _sdc_deleted_at is not null else false"
             __alias__: accounts
             hash_id: md5(str(id))
