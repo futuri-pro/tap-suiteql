@@ -28,7 +28,7 @@ plugins:
     - name: start_date
       env: TAP_SUITEQL_START_DATE
     select:
-      - account.*.*
+      - account.*
     # metadata:
     #   account:
     #     replication-method: FULL_TABLE
