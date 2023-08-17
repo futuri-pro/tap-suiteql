@@ -39,7 +39,7 @@ class AccountStream(suiteqlStream):
         th.Property("issummary", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("location", th.IntegerType),
-        th.Property("parent", th.IntegerType, default=0),
+        th.Property("parent", th.StringType),
         th.Property("reconcilewithmatching", th.BooleanType),
         th.Property("revalue", th.BooleanType),
         th.Property("sspecacct", th.StringType),
@@ -108,7 +108,7 @@ class AccountingPeriodStream(suiteqlStream):
         th.Property("isquarter", th.BooleanType),
         th.Property("isyear", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
         th.Property("periodname", th.StringType),
         th.Property("startdate", th.DateType),
     ).to_dict()
@@ -126,7 +126,7 @@ class AccountingPeriodFiscalCalendarsStream(suiteqlStream):
         th.Property("accountingperiod", th.IntegerType),
         th.Property("fiscalcalendar", th.IntegerType),
         th.Property("fullname", th.StringType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
     ).to_dict()
 
 class AccountTypeStream(suiteqlStream):
@@ -168,7 +168,7 @@ class ClassificationStream(suiteqlStream):
         th.Property("id", th.IntegerType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
     ).to_dict()
 
 """
@@ -296,7 +296,7 @@ class DepartmentStream(suiteqlStream):
         th.Property("isinactive", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
     ).to_dict()
 
 class EntityStream(suiteqlStream):
@@ -334,7 +334,7 @@ class EntityStream(suiteqlStream):
         th.Property("middlename", th.StringType),
         th.Property("mobilephone", th.StringType),
         th.Property("othername", th.IntegerType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
         th.Property("partner", th.IntegerType),
         th.Property("phone", th.StringType),
         th.Property("project", th.IntegerType),
@@ -482,7 +482,7 @@ class ItemStream(suiteqlStream):
         th.Property("minimumquantity", th.IntegerType),
         th.Property("mpn", th.StringType),
         th.Property("overallquantitypricingtype", th.StringType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
         th.Property("preferredstocklevel", th.StringType),
         th.Property("pricinggroup", th.IntegerType),
         th.Property("printitems", th.BooleanType),
@@ -558,7 +558,7 @@ class LocationStream(suiteqlStream):
         th.Property("longitude", th.StringType),
         th.Property("mainaddress", th.StringType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.StringType),
         th.Property("returnaddress", th.StringType),
         th.Property("subsidiary", th.IntegerType),
         th.Property("tranprefix", th.StringType),
