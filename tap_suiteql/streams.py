@@ -39,7 +39,7 @@ class AccountStream(suiteqlStream):
         th.Property("issummary", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("location", th.IntegerType),
-        th.Property("parent", th.IntegerType),
+        th.Property("parent", th.IntegerType, default=0),
         th.Property("reconcilewithmatching", th.BooleanType),
         th.Property("revalue", th.BooleanType),
         th.Property("sspecacct", th.StringType),
