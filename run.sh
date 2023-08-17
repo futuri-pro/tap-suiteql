@@ -7,6 +7,8 @@ source venv/bin/activate
 cd /home/ubuntu/dagster-meltano/meltano-project/tap-suiteql/
 
 
+#/home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id account --select "account"."*" target-postgres
+
 /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id account --select "account"."*" target-postgres
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id accountingbook --select "accountingbook"."*" target-postgres
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id accountingbooksubsidiaries --select "accountingbooksubsidiaries"."*" target-postgres
