@@ -27,16 +27,16 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
-    metadata:
-      account:
-        replication-method: FULL_TABLE
-        replication-key: id
-      customer:
-        replication-method: INCREMENTAL
-      "*":
-        replication-method: INCREMENTAL
-      "*_full":
-        replication-method: FULL_TABLE
+    # metadata:
+    #   account:
+    #     replication-method: FULL_TABLE
+    #     replication-key: id
+    #   customer:
+    #     replication-method: INCREMENTAL
+    #   "*":
+    #     replication-method: INCREMENTAL
+    #   "*_full":
+    #     replication-method: FULL_TABLE
 
   loaders:
   - name: target-jsonl
@@ -45,41 +45,41 @@ plugins:
   - name: target-postgres
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/target-postgres.git
-    settings:
-    - name: add_record_metadata
-      env: TARGET_POSTGRES_ADD_RECORD_METADATA
-    - name: database
-      env: TARGET_POSTGRES_DATABASE
-    - name: default_target_schema
-      env: TARGET_POSTGRES_DEFAULT_TARGET_SCHEMA
-    - name: dialect+driver
-      env: TARGET_POSTGRES_DIALECT_DRIVER
-    - name: flattening_enabled
-      env: TARGET_POSTGRES_FLATTENING_ENABLED
-    - name: flattening_max_depth
-      env: TARGET_POSTGRES_FLATTENING_MAX_DEPTH
-    - name: hard_delete
-      env: TARGET_POSTGRES_HARD_DELETE
-    - name: host
-      env: TARGET_POSTGRES_HOST
-    - name: user
-      env: TARGET_POSTGRES_USER
-    - name: password
-      env: TARGET_POSTGRES_PASSWORD
-    - name: port
-      env: TARGET_POSTGRES_PORT
-    - name: stream_map_config
-      env: TARGET_POSTGRES_STREAM_MAP_CONFIG
-    - name: stream_maps
-      env: TARGET_POSTGRES_STREAM_MAPS
-    config:
-      stream_maps:
-        account:
-          id: int(id)
-          _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-          __alias__: accounts
-          hash_id: md5(str(id))
-          __key_properties__: ["hash_id"]
+    # settings:
+    # - name: add_record_metadata
+    #   env: TARGET_POSTGRES_ADD_RECORD_METADATA
+    # - name: database
+    #   env: TARGET_POSTGRES_DATABASE
+    # - name: default_target_schema
+    #   env: TARGET_POSTGRES_DEFAULT_TARGET_SCHEMA
+    # - name: dialect+driver
+    #   env: TARGET_POSTGRES_DIALECT_DRIVER
+    # - name: flattening_enabled
+    #   env: TARGET_POSTGRES_FLATTENING_ENABLED
+    # - name: flattening_max_depth
+    #   env: TARGET_POSTGRES_FLATTENING_MAX_DEPTH
+    # - name: hard_delete
+    #   env: TARGET_POSTGRES_HARD_DELETE
+    # - name: host
+    #   env: TARGET_POSTGRES_HOST
+    # - name: user
+    #   env: TARGET_POSTGRES_USER
+    # - name: password
+    #   env: TARGET_POSTGRES_PASSWORD
+    # - name: port
+    #   env: TARGET_POSTGRES_PORT
+    # - name: stream_map_config
+    #   env: TARGET_POSTGRES_STREAM_MAP_CONFIG
+    # - name: stream_maps
+    #   env: TARGET_POSTGRES_STREAM_MAPS
+    # config:
+    #   stream_maps:
+    #     account:
+    #       id: int(id)
+    #       _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+    #       __alias__: accounts
+    #       hash_id: md5(str(id))
+    #       __key_properties__: ["hash_id"]
 
 
 
