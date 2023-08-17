@@ -41,6 +41,10 @@ plugins:
         stream_maps:
           account:
             id: int(id)
+            _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+            __alias__: accounts
+            hash_id: md5(str(id))
+            __key_properties__: ["hash_id"]
 environments:
 - name: dev
 - name: staging
