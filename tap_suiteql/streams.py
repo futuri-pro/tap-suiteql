@@ -473,6 +473,58 @@ class ItemStream(suiteqlStream):
     ).to_dict()
 
 
+class JobStream(suiteqlStream):
+    '''
+    0 records in NetSuite
+    '''
+    name = "job"
+    path = "/query/v1/suiteql"
+    entity_name = "job"
+    primary_keys = ["id"]
+    replication_key = "lastmodifieddate"
+    schema = th.PropertiesList(
+        th.Property("accountnumber", th.StringType),
+        th.Property("alternatecontact", th.StringType),
+        th.Property("altname", th.StringType),
+        th.Property("altphone", th.StringType),
+        th.Property("category", th.StringType),
+        th.Property("comments", th.StringType),
+        th.Property("companyname", th.StringType),
+        th.Property("contact", th.StringType),
+        th.Property("cseg_conference", th.StringType),
+        th.Property("currency", th.StringType),
+        th.Property("currencyprecision", th.StringType),
+        th.Property("custentity_exec_alert_summary", th.StringType),
+        th.Property("custentity_vat_reg_no", th.StringType),
+        th.Property("customer", th.StringType),
+        th.Property("datecreated", th.DateTimeType),
+        th.Property("defaultbillingaddress", th.StringType),
+        th.Property("defaultshippingaddress", th.StringType),
+        th.Property("email", th.StringType),
+        th.Property("emailpreference", th.StringType),
+        th.Property("enddate", th.DateType),
+        th.Property("entityid", th.StringType),
+        th.Property("entitynumber", th.StringType),
+        th.Property("entitystatus", th.StringType),
+        th.Property("entitytitle", th.StringType),
+        th.Property("estimatedrevenue", th.StringType),
+        th.Property("externalid", th.StringType),
+        th.Property("fax", th.StringType),
+        th.Property("id", th.StringType),
+        th.Property("isinactive", th.BooleanType),
+        th.Property("jobtype", th.StringType),
+        th.Property("lastmodifieddate", th.DateTimeType),
+        th.Property("parent", th.StringType),
+        th.Property("percentcomplete", th.StringType),
+        th.Property("phone", th.StringType),
+        th.Property("primarycontact", th.StringType),
+        th.Property("projectedenddate", th.StringType),
+        th.Property("revrecforecastrule", th.StringType),
+        th.Property("startdate", th.DateType),
+        th.Property("usepercentcompleteoverride", th.StringType),
+    ).to_dict()
+
+
 class LocationStream(suiteqlStream):
     '''
     19 records in NetSuite
@@ -796,6 +848,40 @@ class TransactionStream(suiteqlStream):
         th.Property("website", th.StringType),
         th.Property("weightedtotal", th.StringType),
         th.Property("winlossreason", th.StringType),
+    ).to_dict()
+
+
+class TransactionAccountingLineStream(suiteqlStream):
+    '''
+    1750 records in NetSuite
+    '''
+    name = "transactionaccountingline"
+    path = "/query/v1/suiteql"
+    entity_name = "transactionaccountingline"
+    #primary_keys = ["uniquekey"]
+    replication_key = "lastmodifieddate"
+    schema = th.PropertiesList(
+        th.Property("account", th.StringType),
+        th.Property("accountingbook", th.StringType),
+        th.Property("amount", th.StringType),
+        th.Property("amountlinked", th.StringType),
+        th.Property("amountpaid", th.StringType),
+        th.Property("amountunpaid", th.StringType),
+        th.Property("credit", th.StringType),
+        th.Property("debit", th.StringType),
+        th.Property("exchangerate", th.StringType),
+        th.Property("glauditnumber", th.StringType),
+        th.Property("glauditnumberdate", th.DateType),
+        th.Property("glauditnumbersequence", th.StringType),
+        th.Property("glauditnumbersetby", th.StringType),
+        th.Property("lastmodifieddate", th.DateTimeType),
+        th.Property("netamount", th.StringType),
+        th.Property("paymentamountunused", th.StringType),
+        th.Property("paymentamountused", th.StringType),
+        th.Property("posting", th.BooleanType),
+        th.Property("processedbyrevcommit", th.BooleanType),
+        th.Property("transaction", th.StringType),
+        th.Property("transactionline", th.StringType),
     ).to_dict()
 
 
