@@ -1040,7 +1040,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("matchbilltoreceipt", th.BooleanType),
         th.Property("memo", th.StringType),
         th.Property("needsrevenueelement", th.BooleanType),
-        th.Property("netamount", th.StringType),
+        th.Property("netamount", th.NumberType),
         th.Property("oldcommitmentfirm", th.BooleanType),
         th.Property("orderpriority", th.StringType),
         th.Property("paymentmethod", th.StringType),
