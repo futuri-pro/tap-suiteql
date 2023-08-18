@@ -864,7 +864,7 @@ class TransactionAccountingLineStream(suiteqlStream):
     schema = th.PropertiesList(
         th.Property("account", th.StringType),
         th.Property("accountingbook", th.StringType),
-        th.Property("amount", th.NumberType),
+        th.Property("amount", th.StringType),
         th.Property("amountlinked", th.StringType),
         th.Property("amountpaid", th.StringType),
         th.Property("amountunpaid", th.StringType),
