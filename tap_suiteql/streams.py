@@ -603,6 +603,7 @@ class TransactionStream(suiteqlStream):
     entity_name = "transaction"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("abbrevtype", th.StringType),
         th.Property("accountbasednumber", th.StringType),
@@ -757,7 +758,7 @@ class TransactionStream(suiteqlStream):
         th.Property("custbody29", th.StringType),
         th.Property("custbody30", th.StringType),
         th.Property("custbodyrsc_businesstype", th.StringType),
-        th.Property("customtype", th.StringType),
+        #th.Property("customtype", th.StringType),
         th.Property("daysopen", th.StringType),
         th.Property("daysoverduesearch", th.StringType),
         th.Property("duedate", th.DateType),
