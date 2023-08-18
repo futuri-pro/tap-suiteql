@@ -792,7 +792,7 @@ class TransactionStream(suiteqlStream):
         th.Property("isfinchrg", th.StringType),
         th.Property("isreversal", th.StringType),
         th.Property("journaltype", th.StringType),
-        th.Property("lastmodifiedby", th.IntegerType),
+        th.Property("lastmodifiedby", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("leadsource", th.StringType),
         th.Property("memdoc", th.StringType),
