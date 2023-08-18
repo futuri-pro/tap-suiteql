@@ -94,7 +94,7 @@ plugins:
         transaction:
           id: int(id)
         transactionaccountingline:
-          amount: "0 if amount == '-1' else float(amount)"
+          amount: "0 if amount is null else float(amount)"
           transaction: int(transaction)
           transactionline: int(transactionline)
         transactionline:
