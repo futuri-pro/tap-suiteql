@@ -223,7 +223,7 @@ class CustomerStream(suiteqlStream):
     '''
     28,318 records in NetSuite
     '''
-    name = "customers"
+    name = "customer"
     path = "/query/v1/suiteql"
     entity_name = "customer"
     metadata_path = "/record/v1/metadata-catalog/customer"
@@ -481,7 +481,7 @@ class LocationStream(suiteqlStream):
     path = "/query/v1/suiteql"
     entity_name = "location"
     primary_keys = ["id"]
-    replication_key = "linelastmodifieddate"
+    replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
@@ -546,7 +546,7 @@ class TransactionStream(suiteqlStream):
     '''
     1750 records in NetSuite
     '''
-    name = "transactions"
+    name = "transaction"
     path = "/query/v1/suiteql"
     entity_name = "transaction"
     primary_keys = ["id"]
@@ -803,7 +803,7 @@ class TransactionLineStream(suiteqlStream):
     '''
     1750 records in NetSuite
     '''
-    name = "transaction_lines"
+    name = "transactionline"
     path = "/query/v1/suiteql"
     entity_name = "transactionline"
     primary_keys = ["uniquekey"]
@@ -988,7 +988,7 @@ class VendorStream(suiteqlStream):
     '''
     765 vendors in NetSuite
     '''
-    name = "vendors"
+    name = "vendor"
     path = "/query/v1/suiteql"
     entity_name = "vendor"
     metadata_path = "/record/v1/metadata-catalog/vendor"
@@ -1019,7 +1019,7 @@ class VendorTypeStream(suiteqlStream):
     '''
     12 vendor types in NetSuite
     '''
-    name = "vendor_types"
+    name = "vendortype"
     path = "/query/v1/suiteql"
     entity_name = "customlist378"
     metadata_path = "/record/v1/metadata-catalog/customlist378"
