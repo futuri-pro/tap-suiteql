@@ -1005,7 +1005,7 @@ class VendorCategoryStream(suiteqlStream):
     path = "/query/v1/suiteql"
     entity_name = "vendorcategory"
     primary_keys = ["id"]
-    replication_key = "lastmodifieddate"
+    #replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
         th.Property("isinactive", th.BooleanType),
         th.Property("externalid", th.StringType),
