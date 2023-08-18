@@ -94,7 +94,20 @@ plugins:
         transaction:
           id: int(id)
         transactionaccountingline:
+          account: int(account)
+          accountingbook: int(accountingbook)
           amount: float(amount)
+          amountlinked: float(amountlinked)
+          amountpaid: float(amountpaid)
+          amountunpaid: float(amountunpaid)
+          credit: float(credit)
+          debit: float(debit)
+          exchangerate: float(exchangerate)
+          glauditnumbersequence: int(glauditnumbersequence)
+          glauditnumbersetby: int(glauditnumbersetby)
+          netamount: float(netamount)
+          paymentamountunused: float(paymentamountunused)
+          paymentamountused: float(paymentamountused)
           transaction: int(transaction)
           transactionline: int(transactionline)
         transactionline:
