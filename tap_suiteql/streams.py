@@ -861,6 +861,7 @@ class TransactionAccountingLineStream(suiteqlStream):
     entity_name = "transactionaccountingline"
     #primary_keys = ["uniquekey"]
     replication_key = "lastmodifieddate"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("account", th.StringType),
         th.Property("accountingbook", th.StringType),
@@ -895,6 +896,7 @@ class TransactionLineStream(suiteqlStream):
     entity_name = "transactionline"
     primary_keys = ["uniquekey"]
     replication_key = "linelastmodifieddate"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("accountinglinetype", th.StringType),
         th.Property("actualshipdate", th.DateType),
