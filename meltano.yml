@@ -99,7 +99,7 @@ plugins:
           transactionline: int(transactionline)
         transactionline:
           id: int(id)
-          netamount: "float(netamount) if netamount is not null else null"
+          netamount: float(netamount)
           uniquekey: int(uniquekey)
           subsidiary: int(subsidiary)
           transaction: int(transaction)
