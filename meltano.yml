@@ -93,6 +93,15 @@ plugins:
     #       uniquekey: int(uniquekey)
         transaction:
           id: int(id)
+        transactionaccountingline:
+          amount: "0 if amount == '-1' else float(amount)"
+          transaction: int(transaction)
+          transactionline: int(transactionline)
+        transactionline:
+          id: int(id)
+          uniquekey: int(uniquekey)
+          subsidiary: int(subsidiary)
+          transaction: int(transaction)
     #     vendor_types:
     #       id: int(id)
     #     vendorcategory:
