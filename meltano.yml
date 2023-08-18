@@ -27,8 +27,8 @@ plugins:
       env: TAP_SUITEQL_BASE_URL
     - name: start_date
       env: TAP_SUITEQL_START_DATE
-    # config:
-    #   stream_maps:
+    config:
+      stream_maps:
     #     account:
     #       id: int(id)
     #       # _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
@@ -91,8 +91,8 @@ plugins:
     #       id: int(id)
     #     transaction_lines:
     #       uniquekey: int(uniquekey)
-    #     transactions:
-    #       id: int(id)
+        transaction:
+          id: int(id)
     #     vendor_types:
     #       id: int(id)
     #     vendorcategory:
