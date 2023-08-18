@@ -763,7 +763,7 @@ class TransactionStream(suiteqlStream):
         th.Property("daysoverduesearch", th.StringType),
         th.Property("duedate", th.DateType),
         th.Property("email", th.StringType),
-        th.Property("employee", th.StringType),
+        th.Property("employee", th.IntegerType),
         th.Property("enddate", th.DateType),
         th.Property("entity", th.IntegerType),
         th.Property("entitystatus", th.StringType),
