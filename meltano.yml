@@ -98,7 +98,7 @@ plugins:
           accountingbook: int(accountingbook)
           amount: float(amount)
           amountlinked: float(amountlinked)
-          amountpaid: float(amountpaid)
+          amountpaid: float(amountlinked)
           amountunpaid: float(amountunpaid)
           credit: float(credit)
           debit: float(debit)

@@ -867,7 +867,7 @@ class TransactionAccountingLineStream(suiteqlStream):
         th.Property("accountingbook", th.IntegerType),
         th.Property("amount", th.NumberType),
         th.Property("amountlinked", th.NumberType),
-        th.Property("amountpaid", th.NumberType),
+        #th.Property("amountpaid", th.NumberType),
         th.Property("amountunpaid", th.NumberType),
         th.Property("credit", th.NumberType),
         th.Property("debit", th.NumberType),
