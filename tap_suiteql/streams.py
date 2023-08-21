@@ -875,7 +875,7 @@ class TransactionAccountingLineStream(suiteqlStream):
         th.Property("glauditnumber", th.StringType),
         th.Property("glauditnumberdate", th.DateType),
         #th.Property("glauditnumbersequence", th.IntegerType),
-        th.Property("glauditnumbersetby", th.IntegerType),
+        #th.Property("glauditnumbersetby", th.IntegerType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("netamount", th.NumberType),
         th.Property("paymentamountunused", th.NumberType),

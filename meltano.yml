@@ -104,7 +104,7 @@ plugins:
           #debit: float(debit)
           exchangerate: float(exchangerate)
           #glauditnumbersequence: int(glauditnumbersequence)
-          glauditnumbersetby: int(glauditnumbersetby)
+          #glauditnumbersetby: int(glauditnumbersetby)
           netamount: float(netamount)
           paymentamountunused: float(paymentamountunused)
           paymentamountused: float(paymentamountused)
