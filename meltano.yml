@@ -106,8 +106,8 @@ plugins:
           #glauditnumbersequence: int(glauditnumbersequence)
           #glauditnumbersetby: int(glauditnumbersetby)
           netamount: float(netamount)
-          paymentamountunused: float(paymentamountunused)
-          paymentamountused: float(paymentamountused)
+          #paymentamountunused: float(paymentamountunused)
+          #paymentamountused: float(paymentamountused)
           transaction: int(transaction)
           transactionline: int(transactionline)
         transactionline:
