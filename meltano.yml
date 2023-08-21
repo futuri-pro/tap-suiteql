@@ -103,7 +103,7 @@ plugins:
           #credit: float(credit)
           #debit: float(debit)
           exchangerate: float(exchangerate)
-          glauditnumbersequence: int(glauditnumbersequence)
+          #glauditnumbersequence: int(glauditnumbersequence)
           glauditnumbersetby: int(glauditnumbersetby)
           netamount: float(netamount)
           paymentamountunused: float(paymentamountunused)

@@ -874,7 +874,7 @@ class TransactionAccountingLineStream(suiteqlStream):
         th.Property("exchangerate", th.NumberType),
         th.Property("glauditnumber", th.StringType),
         th.Property("glauditnumberdate", th.DateType),
-        th.Property("glauditnumbersequence", th.IntegerType),
+        #th.Property("glauditnumbersequence", th.IntegerType),
         th.Property("glauditnumbersetby", th.IntegerType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("netamount", th.NumberType),
