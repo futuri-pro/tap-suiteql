@@ -229,8 +229,8 @@ plugins:
           foreignamount: float(foreignamount)
           foreignamountpaid: float(foreignamountpaid)
           foreignamountunpaid: float(foreignamountunpaid)
-          foreignpaymentamountunused: float(foreignpaymentamountunused)
-          foreignpaymentamountused: float(foreignpaymentamountused)
+          #foreignpaymentamountunused: float(foreignpaymentamountunused)
+          #foreignpaymentamountused: float(foreignpaymentamountused)
           # # fulfillable: "config[fulfillable] if fulfillable in config else None"
           # fxamountlinked: "float(config[fxamountlinked]) if fxamountlinked in config else None"
           # fxvsoeprice: "float(config[fxvsoeprice]) if fxvsoeprice in config else None"
