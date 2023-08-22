@@ -245,7 +245,7 @@ plugins:
           # isinventoryaffecting: "config[isinventoryaffecting] if 'isinventoryaffecting' in config else None"
           # isrevrectransaction: "config[isrevrectransaction] if 'isrevrectransaction' in config else None"
           all: config
-          item: "int(config['item']) if 'item' in config else 0"
+          #item: "int(config['item']) if 'item' in config else 0"
           itemtype: "int(config[itemtype]) if 'itemtype' in config else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if 'linelastmodifieddate' in config else None"
           linesequencenumber: int(linesequencenumber)

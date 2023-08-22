@@ -1032,7 +1032,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("isfxvariance", th.BooleanType),
         th.Property("isinventoryaffecting", th.BooleanType),
         th.Property("isrevrectransaction", th.BooleanType),
-        th.Property("item", th.IntegerType),
+        th.Property("item", th.StringType),
         th.Property("itemtype", th.IntegerType),
         th.Property("linelastmodifieddate", th.DateTimeType),
         th.Property("linesequencenumber", th.IntegerType),
