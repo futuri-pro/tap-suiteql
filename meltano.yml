@@ -244,7 +244,7 @@ plugins:
           # isfxvariance: "config[isfxvariance] if 'isfxvariance' in config else None"
           # isinventoryaffecting: "config[isinventoryaffecting] if 'isinventoryaffecting' in config else None"
           # isrevrectransaction: "config[isrevrectransaction] if 'isrevrectransaction' in config else None"
-          item: "int(config[item]) if 'item' in config else None"
+          item: int(item)
           itemtype: "int(config[itemtype]) if 'itemtype' in config else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if 'linelastmodifieddate' in config else None"
           linesequencenumber: int(linesequencenumber)
