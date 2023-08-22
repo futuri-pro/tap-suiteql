@@ -142,7 +142,7 @@ plugins:
           custcol15: "int(config[custcol15]) if 'custcol15' in config else None"
           # # custcol16: "str(config[custcol16]) if 'custcol16' in config else None"
           # custcol17: "float(config[custcol17]) if 'custcol17' in config else None"
-          # custcol18: "float(config[custcol18]) if 'custcol18' in config else None"
+          custcol18: "float(config[custcol18]) if 'custcol18' in config else None"
           # custcol19: "float(config[custcol19]) if 'custcol19' in config else None"
           # # custcol2: "config[custcol2] if 'custcol2' in config else None"
           # # custcol20: "str(config[custcol20]) if 'custcol20' in config else None"
