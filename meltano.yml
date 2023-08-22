@@ -269,7 +269,7 @@ plugins:
           rateamount: "float(config[rateamount]) if 'rateamount' in config else None"
           ratepercent: "float(config[ratepercent]) if 'ratepercent' in config else None"
           # requestnote: "str(config[requestnote]) if 'requestnote' in config else None"
-          #revenueelement: "int(config[revenueelement]) if 'revenueelement' in config else None"
+          revenueelement: "int(config[revenueelement]) if 'revenueelement' in config else None"
           subsidiary: int(subsidiary)
           # taxline: "config[taxline] if 'taxline' in config else None"
           transaction: int(transaction)
