@@ -128,7 +128,7 @@ plugins:
           #commitinventory: "int(config[commitinventory]) if 'commitinventory' in config else None"
           # commitmentfirm: "config[commitmentfirm] if 'commitmentfirm' in config else None"
           costestimate: "float(config[costestimate]) if 'costestimate' in config else None"
-          #costestimaterate: "float(config[costestimaterate]) if 'costestimaterate' in config else None"
+          costestimaterate: "float(config[costestimaterate]) if 'costestimaterate' in config else None"
           # costestimatetype: "str(config[costestimatetype]) if 'costestimatetype' in config else None"
           createdfrom: "int(config[createdfrom]) if 'createdfrom' in config else None"
           creditforeignamount: "float(config[creditforeignamount]) if 'creditforeignamount' in config else None"
