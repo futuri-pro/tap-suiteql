@@ -135,7 +135,7 @@ plugins:
           #cseg_conference: "int(config[cseg_conference]) if 'cseg_conference' in config else None"
           # custcol1: "config[custcol1] if 'custcol1' in config else None"
           # custcol10: "int(config[custcol10]) if 'custcol10' in config else None"
-          custcol11: int(custcol11)
+          custcol11: "int(config[custcol11]) if 'custcol11' in config else None"
           # custcol12: "int(config[custcol12]) if 'custcol12' in config else None"
           # # custcol13: "config[custcol13] if 'custcol13' in config else None"
           # custcol14: "int(config[custcol14]) if 'custcol14' in config else None"
