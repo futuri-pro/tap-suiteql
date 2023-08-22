@@ -261,7 +261,7 @@ plugins:
           # processedbyrevcommit: "config[processedbyrevcommit] if processedbyrevcommit in config else None"
           # quantity: "float(config[quantity]) if quantity in config else None"
           # quantitybackordered: "float(config[quantitybackordered]) if quantitybackordered in config else None"
-          # quantitybilled: "float(config[quantitybilled]) if quantitybilled in config else None"
+          quantitybilled: float(quantitybilled)
           # quantitycommitted: "float(config[quantitycommitted]) if quantitycommitted in config else None"
           # quantityrejected: "float(config[quantityrejected]) if quantityrejected in config else None"
           # quantityshiprecv: "float(config[quantityshiprecv]) if quantityshiprecv in config else None"
