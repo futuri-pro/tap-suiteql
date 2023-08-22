@@ -121,7 +121,7 @@ plugins:
           billingschedule: "int(config[billingschedule]) if 'billingschedule' in config else None"
           # billvariancestatus: "str(config[billvariancestatus]) if 'billvariancestatus' in config else None"
           category: "int(config[category]) if 'category' in config else None"
-          class: "int(config[class]) if 'class' in config else None"
+          class: "int(config['class']) if 'class' in config else None"
           # cleared: "config[cleared] if 'cleared' in config else None"
           # cleareddate: "config[cleareddate] if 'cleareddate' in config else None"
           # closedate: "str(config[closedate]) if 'closedate' in config else None"
