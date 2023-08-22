@@ -220,7 +220,7 @@ plugins:
           # # documentnumber: "str(config[documentnumber]) if documentnumber in config else None"
           # # donotdisplayline: "config[donotdisplayline] if donotdisplayline in config else None"
           # # eliminate: "config[eliminate] if eliminate in config else None"
-          # entity: "int(config[entity]) if entity in config else None"
+          entity: int(entity)
           # # estgrossprofit: "float(config[estgrossprofit]) if estgrossprofit in config else None"
           # # estgrossprofitpercent: "float(config[estgrossprofitpercent]) if estgrossprofitpercent in config else None"
           # estimatedamount: "float(config[estimatedamount]) if estimatedamount in config else None"
