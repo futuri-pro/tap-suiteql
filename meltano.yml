@@ -256,7 +256,7 @@ plugins:
           netamount: "float(config[netamount]) if 'netamount' in config else None"
           # oldcommitmentfirm: "config[oldcommitmentfirm] if 'oldcommitmentfirm' in config else None"
           #orderpriority: "float(config[orderpriority]) if 'orderpriority' in config else None"
-          #paymentmethod: "int(config[paymentmethod]) if 'paymentmethod' in config else None"
+          paymentmethod: "int(config[paymentmethod]) if 'paymentmethod' in config else None"
           price: "int(config[price]) if 'price' in config else None"
           # processedbyrevcommit: "config[processedbyrevcommit] if 'processedbyrevcommit' in config else None"
           quantity: "float(config[quantity]) if 'quantity' in config else None"
