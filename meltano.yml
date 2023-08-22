@@ -111,11 +111,13 @@ plugins:
         #   transaction: int(transaction)
         #   transactionline: int(transactionline)
         transactionline:
-          id: int(id)
-          netamount: float(netamount)
-          uniquekey: int(uniquekey)
-          subsidiary: int(subsidiary)
-          transaction: int(transaction)
+          #id: int(id)
+          # netamount: float(netamount)
+          # uniquekey: int(uniquekey)
+          # subsidiary: int(subsidiary)
+          # transaction: int(transaction)
+          hash_id: md5(config['hash_seed'] + str(id) + str(transaction))
+          __key_properties__: ["hash_id"]
         transactionaccountingline:
           __source__: transactionline
           # include just the PII and the customer_id
@@ -135,6 +137,8 @@ plugins:
           paymentamountused: float(foreignpaymentamountused)
           transaction: int(transaction)
           transactionline: int(id)
+          hash_id: md5(config['hash_seed'] + str(id) + str(transaction))
+          __key_properties__: ["hash_id"]
           # exclude anything not declared
           __else__: __NULL__
     #     vendor_types:
@@ -143,6 +147,8 @@ plugins:
     #       id: int(id)
     #     vendors:
     #       id: int(id)
+      stream_map_config:
+          hash_seed: 01AWZh7A6DzGm6iJZZ2T
     # metadata:
     #   account:
     #     replication-method: FULL_TABLE
