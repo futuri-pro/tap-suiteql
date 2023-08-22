@@ -264,7 +264,7 @@ plugins:
           quantitybilled: float(quantitybilled)
           # quantitycommitted: "float(config[quantitycommitted]) if quantitycommitted in config else None"
           quantityrejected: float(quantityrejected)
-          # quantityshiprecv: "float(config[quantityshiprecv]) if quantityshiprecv in config else None"
+          quantityshiprecv: float(quantityshiprecv)
           # rate: "float(config[rate]) if rate in config else None"
           # rateamount: "float(config[rateamount]) if rateamount in config else None"
           # ratepercent: "float(config[ratepercent]) if ratepercent in config else None"
