@@ -234,7 +234,7 @@ plugins:
           # fulfillable: "config[fulfillable] if 'fulfillable' in config else None"
           fxamountlinked: "float(config[fxamountlinked]) if 'fxamountlinked' in config else None"
           fxvsoeprice: "float(config[fxvsoeprice]) if 'fxvsoeprice' in config else None"
-          id: "int(config[id]) if 'id' in config else None"
+          id: int(id)
           # invsoebundle: "config[invsoebundle] if 'invsoebundle' in config else None"
           # isbillable: "config[isbillable] if 'isbillable' in config else None"
           # isclosed: "config[isclosed] if 'isclosed' in config else None"
@@ -247,7 +247,7 @@ plugins:
           item: "int(config[item]) if 'item' in config else None"
           itemtype: "int(config[itemtype]) if 'itemtype' in config else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if 'linelastmodifieddate' in config else None"
-          linesequencenumber: "int(config[linesequencenumber]) if 'linesequencenumber' in config else None"
+          linesequencenumber: int(linesequencenumber)
           location: "int(config[location]) if 'location' in config else None"
           # mainline: "config[mainline] if 'mainline' in config else None"
           # matchbilltoreceipt: "config[matchbilltoreceipt] if 'matchbilltoreceipt' in config else None"
@@ -270,12 +270,12 @@ plugins:
           ratepercent: "float(config[ratepercent]) if 'ratepercent' in config else None"
           # requestnote: "str(config[requestnote]) if 'requestnote' in config else None"
           revenueelement: "int(config[revenueelement]) if 'revenueelement' in config else None"
-          subsidiary: "int(config[subsidiary]) if 'subsidiary' in config else None"
+          subsidiary: int(subsidiary)
           # taxline: "config[taxline] if 'taxline' in config else None"
-          transaction: "int(config[transaction]) if 'transaction' in config else None"
+          transaction: int(transaction)
           # transactiondiscount: "config[transactiondiscount] if 'transactiondiscount' in config else None"
           # transactionlinetype: "str(config[transactionlinetype]) if 'transactionlinetype' in config else None"
-          uniquekey: "int(config[uniquekey]) if 'uniquekey' in config else None"
+          uniquekey: int(uniquekey)
           units: "int(config[units]) if 'units' in config else None"
           # vsoedelivered: "config[vsoedelivered] if 'vsoedelivered' in config else None"
           # vsoeisestimate: "config[vsoeisestimate] if 'vsoeisestimate' in config else None"
