@@ -247,7 +247,7 @@ plugins:
           # item: int(item)
           # itemtype: "int(config[itemtype]) if itemtype in config else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if linelastmodifieddate in config else None"
-          #linesequencenumber: int(linesequencenumber)
+          linesequencenumber: int(linesequencenumber)
           # location: int(location)
           # mainline: "config[mainline] if mainline in config else None"
           # matchbilltoreceipt: "config[matchbilltoreceipt] if matchbilltoreceipt in config else None"
