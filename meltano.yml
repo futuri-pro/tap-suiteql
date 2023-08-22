@@ -244,16 +244,16 @@ plugins:
           # isfxvariance: "config[isfxvariance] if isfxvariance in config else None"
           # isinventoryaffecting: "config[isinventoryaffecting] if isinventoryaffecting in config else None"
           # isrevrectransaction: "config[isrevrectransaction] if isrevrectransaction in config else None"
-          item: int(item)
+          # item: int(item)
           # itemtype: "int(config[itemtype]) if itemtype in config else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if linelastmodifieddate in config else None"
           linesequencenumber: int(linesequencenumber)
-          location: int(location)
+          # location: int(location)
           # mainline: "config[mainline] if mainline in config else None"
           # matchbilltoreceipt: "config[matchbilltoreceipt] if matchbilltoreceipt in config else None"
           # memo: "str(config[memo]) if memo in config else None"
           # needsrevenueelement: "config[needsrevenueelement] if needsrevenueelement in config else None"
-          netamount: float(netamount)
+          # netamount: float(netamount)
           # oldcommitmentfirm: "config[oldcommitmentfirm] if oldcommitmentfirm in config else None"
           # orderpriority: "float(config[orderpriority]) if orderpriority in config else None"
           # paymentmethod: "int(config[paymentmethod]) if paymentmethod in config else None"
@@ -270,7 +270,7 @@ plugins:
           # ratepercent: "float(config[ratepercent]) if ratepercent in config else None"
           # requestnote: "str(config[requestnote]) if requestnote in config else None"
           # revenueelement: "int(config[revenueelement]) if revenueelement in config else None"
-          subsidiary: int(subsidiary)
+          # subsidiary: int(subsidiary)
           # taxline: "config[taxline] if taxline in config else None"
           transaction: int(transaction)
           # transactiondiscount: "config[transactiondiscount] if transactiondiscount in config else None"
