@@ -130,7 +130,7 @@ plugins:
           #costestimate: "float(config[costestimate]) if 'costestimate' in config else None"
           #costestimaterate: "float(config[costestimaterate]) if 'costestimaterate' in config else None"
           # costestimatetype: "str(config[costestimatetype]) if 'costestimatetype' in config else None"
-          createdfrom: int(createdfrom)
+          createdfrom: "int(config[createdfrom]) if 'createdfrom' in config else None"
           creditforeignamount: "float(config[creditforeignamount]) if 'creditforeignamount' in config else None"
           #cseg_conference: "int(config[cseg_conference]) if 'cseg_conference' in config else None"
           # custcol1: "config[custcol1] if 'custcol1' in config else None"
