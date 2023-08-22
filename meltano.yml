@@ -253,7 +253,7 @@ plugins:
           # matchbilltoreceipt: "config[matchbilltoreceipt] if 'matchbilltoreceipt' in config else None"
           # memo: "str(config[memo]) if 'memo' in config else None"
           # needsrevenueelement: "config[needsrevenueelement] if 'needsrevenueelement' in config else None"
-          netamount: float(netamount)
+          netamount: "float(config[netamount]) if 'netamount' in config else None"
           # oldcommitmentfirm: "config[oldcommitmentfirm] if 'oldcommitmentfirm' in config else None"
           #orderpriority: "float(config[orderpriority]) if 'orderpriority' in config else None"
           #paymentmethod: "int(config[paymentmethod]) if 'paymentmethod' in config else None"
