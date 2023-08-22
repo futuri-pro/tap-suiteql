@@ -225,7 +225,7 @@ plugins:
           # # estgrossprofitpercent: "float(config[estgrossprofitpercent]) if estgrossprofitpercent in config else None"
           # estimatedamount: "float(config[estimatedamount]) if estimatedamount in config else None"
           # # expectedreceiptdate: "config[expectedreceiptdate] if expectedreceiptdate in config else None"
-          # expenseaccount: "int(config[expenseaccount]) if expenseaccount in config else None"
+          expenseaccount: int(expenseaccount)
           # foreignamount: "float(config[foreignamount]) if foreignamount in config else None"
           # foreignamountpaid: "float(config[foreignamountpaid]) if foreignamountpaid in config else None"
           # foreignamountunpaid: "float(config[foreignamountunpaid]) if foreignamountunpaid in config else None"
