@@ -226,7 +226,7 @@ plugins:
           #estimatedamount: "float(config[estimatedamount]) if 'estimatedamount' in config else None"
           # expectedreceiptdate: "config[expectedreceiptdate] if 'expectedreceiptdate' in config else None"
           expenseaccount: int(expenseaccount)
-          #foreignamount: "float(config[foreignamount]) if 'foreignamount' in config else None"
+          foreignamount: "float(config[foreignamount]) if 'foreignamount' in config else None"
           #foreignamountpaid: "float(config[foreignamountpaid]) if 'foreignamountpaid' in config else None"
           #foreignamountunpaid: "float(config[foreignamountunpaid]) if 'foreignamountunpaid' in config else None"
           #foreignpaymentamountunused: "float(config[foreignpaymentamountunused]) if 'foreignpaymentamountunused' in config else None"
