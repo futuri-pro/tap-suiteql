@@ -216,7 +216,7 @@ plugins:
           custcol_termline: "int(config[custcol_termline]) if 'custcol_termline' in config else None"
           custcol_vendor: "int(config[custcol_vendor]) if 'custcol_vendor' in config else None"
           debitforeignamount: "float(config[debitforeignamount]) if 'debitforeignamount' in config else None"
-          #department: "int(config[department]) if 'department' in config else None"
+          department: "int(config[department]) if 'department' in config else None"
           # documentnumber: "str(config[documentnumber]) if 'documentnumber' in config else None"
           # donotdisplayline: "config[donotdisplayline] if 'donotdisplayline' in config else None"
           # eliminate: "config[eliminate] if 'eliminate' in config else None"
