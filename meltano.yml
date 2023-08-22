@@ -232,7 +232,7 @@ plugins:
           #foreignpaymentamountunused: float(foreignpaymentamountunused)
           #foreignpaymentamountused: float(foreignpaymentamountused)
           # # fulfillable: "config[fulfillable] if fulfillable in config else None"
-          # fxamountlinked: "float(config[fxamountlinked]) if fxamountlinked in config else None"
+          fxamountlinked: float(fxamountlinked)
           # fxvsoeprice: "float(config[fxvsoeprice]) if fxvsoeprice in config else None"
           id: int(id)
           # invsoebundle: "config[invsoebundle] if invsoebundle in config else None"
