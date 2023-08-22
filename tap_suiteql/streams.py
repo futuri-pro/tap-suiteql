@@ -909,7 +909,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("billingschedule", th.IntegerType),
         th.Property("billvariancestatus", th.StringType),
         th.Property("category", th.IntegerType),
-        th.Property("class", th.IntegerType),
+        th.Property("class", th.StringType),
         th.Property("cleared", th.BooleanType),
         th.Property("cleareddate", th.DateType),
         th.Property("closedate", th.StringType),
