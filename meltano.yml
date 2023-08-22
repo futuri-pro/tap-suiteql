@@ -265,9 +265,9 @@ plugins:
           quantitycommitted: "float(config[quantitycommitted]) if 'quantitycommitted' in config else None"
           quantityrejected: "float(config[quantityrejected]) if 'quantityrejected' in config else None"
           quantityshiprecv: "float(config[quantityshiprecv]) if 'quantityshiprecv' in config else None"
-          #rate: "float(config[rate]) if 'rate' in config else None"
-          #rateamount: "float(config[rateamount]) if 'rateamount' in config else None"
-          #ratepercent: "float(config[ratepercent]) if 'ratepercent' in config else None"
+          rate: "float(config[rate]) if 'rate' in config else None"
+          rateamount: "float(config[rateamount]) if 'rateamount' in config else None"
+          ratepercent: "float(config[ratepercent]) if 'ratepercent' in config else None"
           # requestnote: "str(config[requestnote]) if 'requestnote' in config else None"
           #revenueelement: "int(config[revenueelement]) if 'revenueelement' in config else None"
           subsidiary: int(subsidiary)
@@ -280,7 +280,7 @@ plugins:
           # vsoedelivered: "config[vsoedelivered] if 'vsoedelivered' in config else None"
           # vsoeisestimate: "config[vsoeisestimate] if 'vsoeisestimate' in config else None"
           # vsoepermitdiscount: "str(config[vsoepermitdiscount]) if 'vsoepermitdiscount' in config else None"
-          #vsoeprice: "float(config[vsoeprice]) if 'vsoeprice' in config else None"
+          vsoeprice: "float(config[vsoeprice]) if 'vsoeprice' in config else None"
           # vsoesopgroup: "str(config[vsoesopgroup]) if 'vsoesopgroup' in config else None"
           hash_id: md5(config['hash_seed'] + str(id) + str(transaction))
           __key_properties__: ["hash_id"]
