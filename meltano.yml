@@ -91,8 +91,8 @@ plugins:
     #       id: int(id)
     #     transaction_lines:
     #       uniquekey: int(uniquekey)
-        transaction:
-          id: int(id)
+        # transaction:
+        #   id: int(id)
         # transactionaccountingline:
         #   account: int(account)
         #   accountingbook: int(accountingbook)
@@ -141,6 +141,7 @@ plugins:
           __key_properties__: ["hash_id"]
           # exclude anything not declared
           __else__: __NULL__
+        __else__: __NULL__
     #     vendor_types:
     #       id: int(id)
     #     vendorcategory:
