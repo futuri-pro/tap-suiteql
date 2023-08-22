@@ -115,7 +115,7 @@ plugins:
           # actualshipdate: "config[actualshipdate] if actualshipdate in config else None"
           # amortizationenddate: "config[amortizationenddate] if amortizationenddate in config else None"
           # amortizationresidual: "str(config[amortizationresidual]) if amortizationresidual in config else None"
-          amortizationsched: "int(config[amortizationsched]) if amortizationsched in config else None"
+          #amortizationsched: "int(config[amortizationsched]) if amortizationsched in config else None"
           # amortizstartdate: "str(config[amortizstartdate]) if amortizstartdate in config else None"
           # billeddate: "config[billeddate] if billeddate in config else None"
           billingschedule: "int(config[billingschedule]) if billingschedule in config else None"
