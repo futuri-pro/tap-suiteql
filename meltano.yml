@@ -344,7 +344,7 @@ plugins:
           # custcol_swv_cr_ms_pricing_option: "int(config[custcol_swv_cr_ms_pricing_option]) if 'custcol_swv_cr_ms_pricing_option' in config else None"
           # custcol_termline: "int(config[custcol_termline]) if 'custcol_termline' in config else None"
           # custcol_vendor: "int(config[custcol_vendor]) if 'custcol_vendor' in config else None"
-          # debitforeignamount: "float(config[debitforeignamount]) if 'debitforeignamount' in config else None"
+          debitforeignamount: "float(record['debitforeignamount']) if 'debitforeignamount' in record.keys() else None"
           department: "int(record['department']) if 'department' in record.keys() else None"
           # documentnumber: "str(config[documentnumber]) if 'documentnumber' in config else None"
           # donotdisplayline: "config[donotdisplayline] if 'donotdisplayline' in config else None"
