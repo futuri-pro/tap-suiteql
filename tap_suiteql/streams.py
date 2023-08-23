@@ -853,7 +853,6 @@ class TransactionStream(suiteqlStream):
         th.Property("trandisplayname", th.StringType),
         th.Property("tranid", th.StringType),
         th.Property("tranisvsoebundle", th.StringType),
-        th.Property("vendor", th.IntegerType),
         th.Property("type", th.StringType),
         th.Property("typebaseddocumentnumber", th.StringType),
         th.Property("userevenuearrangement", th.StringType),
