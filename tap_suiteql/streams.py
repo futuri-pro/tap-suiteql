@@ -13,20 +13,21 @@ class AccountStream(suiteqlStream):
     entity_name = "account"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("accountsearchdisplayname", th.StringType),
         th.Property("accountsearchdisplaynamecopy", th.StringType),
         th.Property("acctnumber", th.StringType),
         th.Property("accttype", th.StringType),
-        th.Property("billableexpensesacct", th.StringType),
+        th.Property("billableexpensesacct", th.IntegerType),
         th.Property("cashflowrate", th.StringType),
         th.Property("category1099misc", th.StringType),
         th.Property("class", th.StringType),
         th.Property("currency", th.StringType),
         th.Property("custrecord_acct_bank_account_number", th.StringType),
         th.Property("deferralacct", th.StringType),
-        th.Property("department", th.StringType),
+        th.Property("department", th.IntegerType),
         th.Property("description", th.StringType),
         th.Property("displaynamewithhierarchy", th.StringType),
         th.Property("eliminate", th.BooleanType),
@@ -38,8 +39,8 @@ class AccountStream(suiteqlStream):
         th.Property("isinactive", th.BooleanType),
         th.Property("issummary", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("location", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("location", th.IntegerType),
+        th.Property("parent", th.IntegerType),
         th.Property("reconcilewithmatching", th.BooleanType),
         th.Property("revalue", th.BooleanType),
         th.Property("sspecacct", th.StringType),
@@ -55,10 +56,10 @@ class AccountingBookStream(suiteqlStream):
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
     schema = th.PropertiesList(
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("basebook", th.StringType),
         th.Property("contingentrevenuehandling", th.BooleanType),
-        th.Property("effectiveperiod", th.StringType),
+        th.Property("effectiveperiod", th.IntegerType),
         th.Property("externalid", th.StringType),
         th.Property("isadjustmentonly", th.BooleanType),
         th.Property("isconsolidated", th.BooleanType),
@@ -79,9 +80,9 @@ class AccountingBookSubsidiariesStream(suiteqlStream):
     entity_name = "accountingbooksubsidiaries"
     #primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("accountingbook", th.StringType),
+        th.Property("accountingbook", th.IntegerType),
         th.Property("status", th.StringType),
-        th.Property("subsidiary", th.StringType),
+        th.Property("subsidiary", th.IntegerType),
     ).to_dict()
 
 class AccountingPeriodStream(suiteqlStream):
@@ -101,14 +102,14 @@ class AccountingPeriodStream(suiteqlStream):
         th.Property("closed", th.BooleanType),
         th.Property("closedondate", th.DateType),
         th.Property("enddate", th.DateType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("isadjust", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
         th.Property("isposting", th.BooleanType),
         th.Property("isquarter", th.BooleanType),
         th.Property("isyear", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
         th.Property("periodname", th.StringType),
         th.Property("startdate", th.DateType),
     ).to_dict()
@@ -123,10 +124,10 @@ class AccountingPeriodFiscalCalendarsStream(suiteqlStream):
     entity_name = "accountingperiodfiscalcalendars"
     primary_keys = ["accountingperiod"]
     schema = th.PropertiesList(
-        th.Property("accountingperiod", th.StringType),
-        th.Property("fiscalcalendar", th.StringType),
+        th.Property("accountingperiod", th.IntegerType),
+        th.Property("fiscalcalendar", th.IntegerType),
         th.Property("fullname", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
     ).to_dict()
 
 class AccountTypeStream(suiteqlStream):

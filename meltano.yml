@@ -29,12 +29,16 @@ plugins:
       env: TAP_SUITEQL_START_DATE
     config:
       stream_maps:
-    #     account:
-    #       id: int(id)
-    #       # _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
-    #       # __alias__: account
-    #       # hash_id: md5(str(id))
-    #       # __key_properties__: ["hash_id"]
+        account:
+          id: int(id)
+          billableexpensesacct: "int(record['billableexpensesacct']) if 'billableexpensesacct' in record.keys() else None"
+          department: "int(record['department']) if 'department' in record.keys() else None"
+          location: "int(record['location']) if 'location' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          # _fivetran_deleted: "true if _sdc_deleted_at is not null else false"
+          # __alias__: account
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
     #     accounthierarchylevels:
     #       id: int(id)
     #     accountingbook:
