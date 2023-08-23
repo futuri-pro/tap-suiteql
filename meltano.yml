@@ -205,6 +205,7 @@ plugins:
         location:
           id: int(id)
           locationtype: "int(record['locationtype']) if 'locationtype' in record.keys() else None"
+          mainaddress: "int(record['mainaddress']) if 'mainaddress' in record.keys() else None"
           parent: "int(record['parent']) if 'parent' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]

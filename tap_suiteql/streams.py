@@ -812,7 +812,7 @@ class LocationStream(suiteqlStream):
         th.Property("latitude", th.StringType),
         th.Property("locationtype", th.IntegerType),
         th.Property("longitude", th.StringType),
-        th.Property("mainaddress", th.StringType),
+        th.Property("mainaddress", th.IntegerType),
         th.Property("name", th.StringType),
         th.Property("parent", th.IntegerType),
         th.Property("returnaddress", th.StringType),
