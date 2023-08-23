@@ -13,7 +13,7 @@ class AccountStream(suiteqlStream):
     entity_name = "account"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("id", th.IntegerType),
         th.Property("accountsearchdisplayname", th.StringType),
@@ -55,7 +55,7 @@ class AccountingBookStream(suiteqlStream):
     entity_name = "accountingbook"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("id", th.IntegerType),
         th.Property("basebook", th.StringType),
@@ -95,7 +95,7 @@ class AccountingPeriodStream(suiteqlStream):
     entity_name = "accountingperiod"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("alllocked", th.BooleanType),
         th.Property("allownonglchanges", th.BooleanType),
@@ -163,7 +163,7 @@ class ClassificationStream(suiteqlStream):
     entity_name = "classification"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("isinactive", th.BooleanType),
         th.Property("externalid", th.StringType),
@@ -207,7 +207,7 @@ class CurrencyStream(suiteqlStream):
     entity_name = "currency"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("currencyprecision", th.IntegerType),
         th.Property("displaysymbol", th.StringType),
@@ -235,7 +235,7 @@ class CustomerStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
 
 
 class DepartmentStream(suiteqlStream):
@@ -247,7 +247,7 @@ class DepartmentStream(suiteqlStream):
     entity_name = "department"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
@@ -268,7 +268,7 @@ class EntityStream(suiteqlStream):
     entity_name = "entity"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("altemail", th.StringType),
         th.Property("altname", th.StringType),
@@ -314,7 +314,7 @@ class EntityAddressStream(suiteqlStream):
     entity_name = "entityaddress"
     primary_keys = ["nkey", "recordowner"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("addr1", th.StringType),
         th.Property("addr2", th.StringType),
@@ -343,7 +343,7 @@ class ItemStream(suiteqlStream):
     entity_name = "item"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("amortizationperiod", th.StringType),
         th.Property("amortizationtemplate", th.StringType),
@@ -492,7 +492,7 @@ class JobStream(suiteqlStream):
     entity_name = "job"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("accountnumber", th.StringType),
         th.Property("alternatecontact", th.StringType),
@@ -545,7 +545,7 @@ class LocationStream(suiteqlStream):
     entity_name = "location"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
@@ -574,7 +574,7 @@ class LocationMainAddressStream(suiteqlStream):
     entity_name = "locationmainaddress"
     primary_keys = ["nkey", "recordowner"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
     schema = th.PropertiesList(
         th.Property("addr1", th.StringType),
         th.Property("addr2", th.StringType),
@@ -605,7 +605,7 @@ class SubsidiaryStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links", "intercoaccount", "traninternalprefix", "custrecord_company_brn", "custrecord_company_uen", "custrecord_nspbcs_epm_application_name", "custrecord_nspbcs_epm_url", "custrecord_nspbcs_epm_username", "custrecord_pt_sub_taxonomy_reference", "custrecord_subsidiary_branch_id", "externalid", "fax", "purchaseorderamount", "purchaseorderquantity", "purchaseorderquantitydiff", "receiptamount", "receiptquantity", "receiptquantitydiff", "representingcustomer", "representingvendor", "returnaddress", "shippingaddress", "ssnortin", "state1taxnumber", "tranprefix" ]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
 
 
 class TransactionStream(suiteqlStream):
@@ -1042,7 +1042,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("isinventoryaffecting", th.BooleanType),
         th.Property("isrevrectransaction", th.BooleanType),
         th.Property("item", th.IntegerType),
-        th.Property("itemtype", th.IntegerType),
+        th.Property("itemtype", th.StringType),
         th.Property("linelastmodifieddate", th.DateTimeType),
         th.Property("linesequencenumber", th.IntegerType),
         th.Property("location", th.IntegerType),
@@ -1276,7 +1276,7 @@ class VendorStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
 
 
 class VendorCategoryStream(suiteqlStream):
@@ -1356,7 +1356,7 @@ class EmployeeStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links", "basewage", "basewagetype", "billingclass", "billpay", "bonustarget", "bonustargetcomment", "bonustargetpayfrequency", "bonustargettype", "commissionpaymentpreference", "compensationcurrency", "defaultjobresourcerole", "directdeposit", "eligibleforcommission", "employeeftestatus", "enabledeductionlimits", "inheritiprules", "ipaddressrule", "isjobmanager", "isjobresource", "job", "jobemploymentcategory", "laborcategory", "laborcost", "lastpaiddate", "overtimepolicy", "payfrequency", "rate", "salesrole", "startdatetimeoffcalc", "targetutilization", "terminationcategory", "terminationdetails", "terminationreason", "terminationregretted", "timeoffplan", "useperquest", "usetimedata", "workassignment", "workplace"]
     replication_key = "lastmodifieddate"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
 
 
 
@@ -1487,7 +1487,7 @@ class ContractStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodified"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"
 
 
 class ContractItemStream(suiteqlStream):
@@ -1501,4 +1501,4 @@ class ContractItemStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodified"
-    replication_method = "FULL_TABLE"
+    replication_method = "INCREMENTAL"

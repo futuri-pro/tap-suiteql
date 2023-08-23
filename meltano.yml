@@ -374,7 +374,7 @@ plugins:
           # isinventoryaffecting: "config[isinventoryaffecting] if 'isinventoryaffecting' in config else None"
           # isrevrectransaction: "config[isrevrectransaction] if 'isrevrectransaction' in config else None"
           item: "int(record['item']) if 'item' in record.keys() else None"
-          itemtype: "int(record['itemtype']) if 'itemtype' in record.keys() else None"
+          #itemtype: "int(record['itemtype']) if 'itemtype' in record.keys() else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if 'linelastmodifieddate' in config else None"
           linesequencenumber: int(linesequencenumber)
           location: "int(record['location']) if 'location' in record.keys() else None"
