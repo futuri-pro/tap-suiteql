@@ -106,10 +106,48 @@ plugins:
           symbolplacement: "int(record['symbolplacement']) if 'symbolplacement' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
+
         customers:
           id: int(id)
+          balancesearch: "float(record['balancesearch']) if 'balancesearch' in record.keys() else None"
+          billingratecard: "int(record['balancesearch']) if 'balancesearch' in record.keys() else None"
+          buyingreason: "int(record['buyingreason']) if 'buyingreason' in record.keys() else None"
+          buyingtimeframe: "int(record['buyingtimeframe']) if 'buyingtimeframe' in record.keys() else None"
+          campaignevent: "int(record['campaignevent']) if 'campaignevent' in record.keys() else None"
+          category: "int(record['category']) if 'category' in record.keys() else None"
+          contact: "int(record['contact']) if 'contact' in record.keys() else None"
+          creditlimit: "float(record['creditlimit']) if 'creditlimit' in record.keys() else None"
+          cseg_conference: "int(record['cseg_conference']) if 'cseg_conference' in record.keys() else None"
+          currency: "int(record['currency']) if 'currency' in record.keys() else None"
+          defaultbankaccount: "int(record['defaultbankaccount']) if 'defaultbankaccount' in record.keys() else None"
+          defaultbillingaddress: "int(record['defaultbillingaddress']) if 'defaultbillingaddress' in record.keys() else None"
+          defaultorderpriority: "float(record['defaultorderpriority']) if 'defaultorderpriority' in record.keys() else None"
+          defaultshippingaddress: "int(record['defaultshippingaddress']) if 'defaultshippingaddress' in record.keys() else None"
+          draccount: "int(record['draccount']) if 'draccount' in record.keys() else None"
+          entitynumber: "int(record['entitynumber']) if 'entitynumber' in record.keys() else None"
+          entitystatus: "int(record['entitystatus']) if 'entitystatus' in record.keys() else None"
+          estimatedbudget: "float(record['estimatedbudget']) if 'estimatedbudget' in record.keys() else None"
+          globalsubscriptionstatus: "int(record['globalsubscriptionstatus']) if 'globalsubscriptionstatus' in record.keys() else None"
+          leadsource: "int(record['leadsource']) if 'leadsource' in record.keys() else None"
+          negativenumberformat: "int(record['negativenumberformat']) if 'negativenumberformat' in record.keys() else None"
+          numberformat: "int(record['numberformat']) if 'numberformat' in record.keys() else None"
+          overduebalancesearch: "float(record['overduebalancesearch']) if 'overduebalancesearch' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          partner: "int(record['partner']) if 'partner' in record.keys() else None"
+          prefccprocessor: "int(record['prefccprocessor']) if 'prefccprocessor' in record.keys() else None"
+          pricelevel: "int(record['pricelevel']) if 'pricelevel' in record.keys() else None"
+          receivablesaccount: "int(record['receivablesaccount']) if 'receivablesaccount' in record.keys() else None"
+          reminderdays: "int(record['reminderdays']) if 'reminderdays' in record.keys() else None"
+          representingsubsidiary: "int(record['representingsubsidiary']) if 'representingsubsidiary' in record.keys() else None"
+          salesreadiness: "int(record['salesreadiness']) if 'salesreadiness' in record.keys() else None"
+          salesrep: "int(record['salesrep']) if 'salesrep' in record.keys() else None"
+          shippingitem: "int(record['shippingitem']) if 'shippingitem' in record.keys() else None"
+          terms: "int(record['terms']) if 'terms' in record.keys() else None"
+          territory: "int(record['territory']) if 'territory' in record.keys() else None"
+          unbilledorderssearch: "int(record['unbilledorderssearch']) if 'unbilledorderssearch' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
+
         department:
           id: int(id)
           parent: "int(record['parent']) if 'parent' in record.keys() else None"
