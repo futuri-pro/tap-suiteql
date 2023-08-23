@@ -150,6 +150,8 @@ class Tapsuiteql(Tap):
             schema = SchemaBuilder(stream_class(tap=self)).schema()
             body_query = QueryBuilder(stream_class(tap=self, schema=schema)).query()
 
+            print(f"""\nQUERY: {body_query}\n""")
+
             stream_classes.append(
                 stream_class(tap=self, schema=schema, body_query=body_query)
             )
