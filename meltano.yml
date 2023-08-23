@@ -107,7 +107,7 @@ plugins:
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
 
-        customers:
+        customer:
           id: int(id)
           balancesearch: "float(record['balancesearch']) if 'balancesearch' in record.keys() else None"
           billingratecard: "int(record['balancesearch']) if 'balancesearch' in record.keys() else None"
