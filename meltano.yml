@@ -448,7 +448,6 @@ plugins:
           id: int(id)
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
-        __else__: None
       stream_map_config:
           hash_seed: 01AWZh7A6DzGm6iJZZ2T
     # metadata:
