@@ -110,7 +110,7 @@ plugins:
         customer:
           id: int(id)
           balancesearch: "float(record['balancesearch']) if 'balancesearch' in record.keys() else None"
-          billingratecard: "int(record['balancesearch']) if 'balancesearch' in record.keys() else None"
+          billingratecard: "int(record['billingratecard']) if 'billingratecard' in record.keys() else None"
           buyingreason: "int(record['buyingreason']) if 'buyingreason' in record.keys() else None"
           buyingtimeframe: "int(record['buyingtimeframe']) if 'buyingtimeframe' in record.keys() else None"
           campaignevent: "int(record['campaignevent']) if 'campaignevent' in record.keys() else None"
@@ -485,6 +485,7 @@ plugins:
           __key_properties__: ["hash_id"]
         vendor:
           id: int(id)
+          category: "int(record['category']) if 'category' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
       stream_map_config:
