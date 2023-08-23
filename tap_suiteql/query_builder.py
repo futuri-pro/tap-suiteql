@@ -72,6 +72,6 @@ class QueryBuilder:
             {order_statement}
         """.strip()
 
-        print(f"""\nQUERY: {query}\n""")
+        #print(f"""\nQUERY: {query}\n""")
 
         return query
