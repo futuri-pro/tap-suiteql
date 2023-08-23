@@ -1010,7 +1010,7 @@ class TransactionLineStream(suiteqlStream):
         th.Property("estimatedamount", th.StringType),
         th.Property("expectedreceiptdate", th.DateType),
         th.Property("expenseaccount", th.StringType),
-        th.Property("foreignamount", th.StringType),
+        th.Property("foreignamount", th.NumberType),
         th.Property("foreignamountpaid", th.StringType),
         th.Property("foreignamountunpaid", th.StringType),
         th.Property("foreignpaymentamountunused", th.StringType),
