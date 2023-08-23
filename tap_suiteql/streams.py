@@ -55,6 +55,7 @@ class AccountingBookStream(suiteqlStream):
     entity_name = "accountingbook"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("id", th.IntegerType),
         th.Property("basebook", th.StringType),
@@ -94,6 +95,7 @@ class AccountingPeriodStream(suiteqlStream):
     entity_name = "accountingperiod"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("alllocked", th.BooleanType),
         th.Property("allownonglchanges", th.BooleanType),
@@ -145,10 +147,10 @@ class AccountTypeStream(suiteqlStream):
         th.Property("eliminationalgo", th.StringType),
         th.Property("id", th.StringType),
         th.Property("includeinrevaldefault", th.BooleanType),
-        th.Property("internalid", th.StringType),
+        th.Property("internalid", th.IntegerType),
         th.Property("left", th.BooleanType),
         th.Property("longname", th.StringType),
-        th.Property("seqnum", th.StringType),
+        th.Property("seqnum", th.IntegerType),
         th.Property("usercanchangerevaloption", th.BooleanType),
     ).to_dict()
 
@@ -161,15 +163,16 @@ class ClassificationStream(suiteqlStream):
     entity_name = "classification"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("isinactive", th.BooleanType),
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
         th.Property("includechildren", th.BooleanType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
     ).to_dict()
 
 class ConsolidatedExchangeRateStream(suiteqlStream):
@@ -181,17 +184,17 @@ class ConsolidatedExchangeRateStream(suiteqlStream):
     entity_name = "consolidatedexchangerate"
     primary_keys = ["id"]
     schema = th.PropertiesList(
-        th.Property("accountingbook", th.StringType),
-        th.Property("averagerate", th.StringType),
-        th.Property("currentrate", th.StringType),
+        th.Property("accountingbook", th.IntegerType),
+        th.Property("averagerate", th.NumberType),
+        th.Property("currentrate", th.NumberType),
         th.Property("externalid", th.StringType),
-        th.Property("fromcurrency", th.StringType),
-        th.Property("fromsubsidiary", th.StringType),
-        th.Property("historicalrate", th.StringType),
-        th.Property("id", th.StringType),
-        th.Property("postingperiod", th.StringType),
-        th.Property("tocurrency", th.StringType),
-        th.Property("tosubsidiary", th.StringType),
+        th.Property("fromcurrency", th.IntegerType),
+        th.Property("fromsubsidiary", th.IntegerType),
+        th.Property("historicalrate", th.NumberType),
+        th.Property("id", th.IntegerType),
+        th.Property("postingperiod", th.IntegerType),
+        th.Property("tocurrency", th.IntegerType),
+        th.Property("tosubsidiary", th.IntegerType),
     ).to_dict()
 
 
@@ -204,11 +207,12 @@ class CurrencyStream(suiteqlStream):
     entity_name = "currency"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
-        th.Property("currencyprecision", th.StringType),
+        th.Property("currencyprecision", th.IntegerType),
         th.Property("displaysymbol", th.StringType),
-        th.Property("exchangerate", th.StringType),
-        th.Property("id", th.StringType),
+        th.Property("exchangerate", th.NumberType),
+        th.Property("id", th.IntegerType),
         th.Property("includeinfxrateupdates", th.BooleanType),
         th.Property("isbasecurrency", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
@@ -216,7 +220,7 @@ class CurrencyStream(suiteqlStream):
         th.Property("name", th.StringType),
         th.Property("overridecurrencyformat", th.BooleanType),
         th.Property("symbol", th.StringType),
-        th.Property("symbolplacement", th.StringType),
+        th.Property("symbolplacement", th.IntegerType),
     ).to_dict()
 
 
@@ -231,6 +235,7 @@ class CustomerStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
 
 
 class DepartmentStream(suiteqlStream):
@@ -242,15 +247,16 @@ class DepartmentStream(suiteqlStream):
     entity_name = "department"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("includechildren", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
     ).to_dict()
 
 class EntityStream(suiteqlStream):
@@ -262,40 +268,41 @@ class EntityStream(suiteqlStream):
     entity_name = "entity"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("altemail", th.StringType),
         th.Property("altname", th.StringType),
         th.Property("altphone", th.StringType),
         th.Property("comments", th.StringType),
-        th.Property("contact", th.StringType),
-        th.Property("customer", th.StringType),
+        th.Property("contact", th.IntegerType),
+        th.Property("customer", th.IntegerType),
         th.Property("datecreated", th.DateTimeType),
         th.Property("email", th.StringType),
-        th.Property("employee", th.StringType),
+        th.Property("employee", th.IntegerType),
         th.Property("entityid", th.StringType),
-        th.Property("entitynumber", th.StringType),
+        th.Property("entitynumber", th.IntegerType),
         th.Property("entitytitle", th.StringType),
         th.Property("externalid", th.StringType),
         th.Property("fax", th.StringType),
         th.Property("firstname", th.StringType),
-        th.Property("group", th.StringType),
+        th.Property("group", th.IntegerType),
         th.Property("homephone", th.StringType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("isinactive", th.BooleanType),
         th.Property("isperson", th.BooleanType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("lastname", th.StringType),
         th.Property("middlename", th.StringType),
         th.Property("mobilephone", th.StringType),
-        th.Property("othername", th.StringType),
-        th.Property("parent", th.StringType),
-        th.Property("partner", th.StringType),
+        th.Property("othername", th.IntegerType),
+        th.Property("parent", th.IntegerType),
+        th.Property("partner", th.IntegerType),
         th.Property("phone", th.StringType),
-        th.Property("project", th.StringType),
+        th.Property("project", th.IntegerType),
         th.Property("salutation", th.StringType),
         th.Property("title", th.StringType),
-        th.Property("toplevelparent", th.StringType),
-        th.Property("vendor", th.StringType),
+        th.Property("toplevelparent", th.IntegerType),
+        th.Property("vendor", th.IntegerType),
     ).to_dict()
 
 class EntityAddressStream(suiteqlStream):
@@ -307,6 +314,7 @@ class EntityAddressStream(suiteqlStream):
     entity_name = "entityaddress"
     primary_keys = ["nkey", "recordowner"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("addr1", th.StringType),
         th.Property("addr2", th.StringType),
@@ -319,9 +327,9 @@ class EntityAddressStream(suiteqlStream):
         th.Property("country", th.StringType),
         th.Property("dropdownstate", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("nkey", th.StringType),
+        th.Property("nkey", th.IntegerType),
         th.Property("override", th.BooleanType),
-        th.Property("recordowner", th.StringType),
+        th.Property("recordowner", th.IntegerType),
         th.Property("state", th.StringType),
         th.Property("zip", th.StringType),
     ).to_dict()
@@ -335,17 +343,18 @@ class ItemStream(suiteqlStream):
     entity_name = "item"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("amortizationperiod", th.StringType),
         th.Property("amortizationtemplate", th.StringType),
         th.Property("atpmethod", th.StringType),
         th.Property("autoexpandkitforrevenuemgmt", th.BooleanType),
         th.Property("averagecost", th.StringType),
-        th.Property("billexchratevarianceacct", th.StringType),
+        th.Property("billexchratevarianceacct", th.IntegerType),
         th.Property("billingschedule", th.StringType),
-        th.Property("billpricevarianceacct", th.StringType),
-        th.Property("billqtyvarianceacct", th.StringType),
-        th.Property("class", th.StringType),
+        th.Property("billpricevarianceacct", th.IntegerType),
+        th.Property("billqtyvarianceacct", th.IntegerType),
+        th.Property("class", th.IntegerType),
         th.Property("cost", th.StringType),
         th.Property("costestimate", th.StringType),
         th.Property("costestimatetype", th.StringType),
@@ -381,29 +390,29 @@ class ItemStream(suiteqlStream):
         th.Property("custitem_swv_cr_item_pricing_option", th.StringType),
         th.Property("custitem_type_of_goods", th.StringType),
         th.Property("custitem_un_number", th.StringType),
-        th.Property("deferralaccount", th.StringType),
-        th.Property("deferredrevenueaccount", th.StringType),
+        th.Property("deferralaccount", th.IntegerType),
+        th.Property("deferredrevenueaccount", th.IntegerType),
         th.Property("deferrevrec", th.BooleanType),
-        th.Property("department", th.StringType),
+        th.Property("department", th.IntegerType),
         th.Property("description", th.StringType),
         th.Property("directrevenueposting", th.BooleanType),
         th.Property("displayname", th.StringType),
         th.Property("effectivebomcontrol", th.StringType),
         th.Property("enforceminqtyinternally", th.BooleanType),
-        th.Property("expenseaccount", th.StringType),
+        th.Property("expenseaccount", th.IntegerType),
         th.Property("expenseamortizationrule", th.StringType),
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
         th.Property("fxcost", th.StringType),
-        th.Property("gainlossaccount", th.StringType),
+        th.Property("gainlossaccount", th.IntegerType),
         th.Property("generateaccruals", th.BooleanType),
         th.Property("handlingcost", th.StringType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("includechildren", th.BooleanType),
-        th.Property("incomeaccount", th.StringType),
-        th.Property("intercodefrevaccount", th.StringType),
-        th.Property("intercoexpenseaccount", th.StringType),
-        th.Property("intercoincomeaccount", th.StringType),
+        th.Property("incomeaccount", th.IntegerType),
+        th.Property("intercodefrevaccount", th.IntegerType),
+        th.Property("intercoexpenseaccount", th.IntegerType),
+        th.Property("intercoincomeaccount", th.IntegerType),
         th.Property("isfulfillable", th.BooleanType),
         th.Property("isinactive", th.BooleanType),
         th.Property("isonline", th.BooleanType),
@@ -412,14 +421,14 @@ class ItemStream(suiteqlStream):
         th.Property("itemtype", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("lastpurchaseprice", th.StringType),
-        th.Property("location", th.StringType),
+        th.Property("location", th.IntegerType),
         th.Property("manufacturer", th.StringType),
         th.Property("matchbilltoreceipt", th.BooleanType),
         th.Property("maximumquantity", th.StringType),
         th.Property("minimumquantity", th.StringType),
         th.Property("mpn", th.StringType),
         th.Property("overallquantitypricingtype", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
         th.Property("preferredstocklevel", th.StringType),
         th.Property("pricinggroup", th.StringType),
         th.Property("printitems", th.BooleanType),
@@ -453,7 +462,7 @@ class ItemStream(suiteqlStream):
         th.Property("shippingcost", th.StringType),
         th.Property("stockdescription", th.StringType),
         th.Property("stockunit", th.StringType),
-        th.Property("subsidiary", th.StringType),
+        th.Property("subsidiary", th.IntegerType),
         th.Property("subtype", th.StringType),
         th.Property("supplyreplenishmentmethod", th.StringType),
         th.Property("totalvalue", th.StringType),
@@ -483,6 +492,7 @@ class JobStream(suiteqlStream):
     entity_name = "job"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("accountnumber", th.StringType),
         th.Property("alternatecontact", th.StringType),
@@ -535,19 +545,20 @@ class LocationStream(suiteqlStream):
     entity_name = "location"
     primary_keys = ["id"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("externalid", th.StringType),
         th.Property("fullname", th.StringType),
-        th.Property("id", th.StringType),
+        th.Property("id", th.IntegerType),
         th.Property("includechildren", th.StringType),
         th.Property("isinactive", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("latitude", th.StringType),
-        th.Property("locationtype", th.StringType),
+        th.Property("locationtype", th.IntegerType),
         th.Property("longitude", th.StringType),
         th.Property("mainaddress", th.StringType),
         th.Property("name", th.StringType),
-        th.Property("parent", th.StringType),
+        th.Property("parent", th.IntegerType),
         th.Property("returnaddress", th.StringType),
         th.Property("subsidiary", th.StringType),
         th.Property("tranprefix", th.StringType),
@@ -563,6 +574,7 @@ class LocationMainAddressStream(suiteqlStream):
     entity_name = "locationmainaddress"
     primary_keys = ["nkey", "recordowner"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
     schema = th.PropertiesList(
         th.Property("addr1", th.StringType),
         th.Property("addr2", th.StringType),
@@ -575,9 +587,9 @@ class LocationMainAddressStream(suiteqlStream):
         th.Property("country", th.StringType),
         th.Property("dropdownstate", th.StringType),
         th.Property("lastmodifieddate", th.DateTimeType),
-        th.Property("nkey", th.StringType),
+        th.Property("nkey", th.IntegerType),
         th.Property("override", th.BooleanType),
-        th.Property("recordowner", th.StringType),
+        th.Property("recordowner", th.IntegerType),
         th.Property("state", th.StringType),
         th.Property("zip", th.StringType),
     ).to_dict()
@@ -593,6 +605,7 @@ class SubsidiaryStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links", "intercoaccount", "traninternalprefix", "custrecord_company_brn", "custrecord_company_uen", "custrecord_nspbcs_epm_application_name", "custrecord_nspbcs_epm_url", "custrecord_nspbcs_epm_username", "custrecord_pt_sub_taxonomy_reference", "custrecord_subsidiary_branch_id", "externalid", "fax", "purchaseorderamount", "purchaseorderquantity", "purchaseorderquantitydiff", "receiptamount", "receiptquantity", "receiptquantitydiff", "representingcustomer", "representingvendor", "returnaddress", "shippingaddress", "ssnortin", "state1taxnumber", "tranprefix" ]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
 
 
 class TransactionStream(suiteqlStream):
@@ -611,18 +624,18 @@ class TransactionStream(suiteqlStream):
         th.Property("actionitem", th.StringType),
         th.Property("actualshipdate", th.DateType),
         th.Property("altsalestotal", th.StringType),
-        th.Property("approvalstatus", th.StringType),
-        th.Property("balsegstatus", th.StringType),
+        th.Property("approvalstatus", th.IntegerType),
+        th.Property("balsegstatus", th.IntegerType),
         th.Property("billingaddress", th.StringType),
         th.Property("billingstatus", th.StringType),
-        th.Property("bulkprocsubmission", th.StringType),
-        th.Property("buyingreason", th.StringType),
-        th.Property("buyingtimeframe", th.StringType),
+        th.Property("bulkprocsubmission", th.IntegerType),
+        th.Property("buyingreason", th.IntegerType),
+        th.Property("buyingtimeframe", th.IntegerType),
         th.Property("closedate", th.StringType),
-        th.Property("createdby", th.StringType),
+        th.Property("createdby", th.IntegerType),
         th.Property("createddate", th.DateTimeType),
-        th.Property("cseg_conference", th.StringType),
-        th.Property("currency", th.StringType),
+        th.Property("cseg_conference", th.IntegerType),
+        th.Property("currency", th.IntegerType),
         th.Property("custbody_4110_customregnum", th.StringType),
         th.Property("custbody_4599_mx_operation_type", th.StringType),
         th.Property("custbody_4599_sg_import_permit_num", th.StringType),
@@ -764,10 +777,10 @@ class TransactionStream(suiteqlStream):
         th.Property("daysoverduesearch", th.StringType),
         th.Property("duedate", th.DateType),
         th.Property("email", th.StringType),
-        th.Property("employee", th.StringType),
+        th.Property("employee", th.IntegerType),
         th.Property("enddate", th.DateType),
-        th.Property("entity", th.StringType),
-        th.Property("entitystatus", th.StringType),
+        th.Property("entity", th.IntegerType),
+        th.Property("entitystatus", th.IntegerType),
         th.Property("estgrossprofit", th.StringType),
         th.Property("estgrossprofitpercent", th.StringType),
         th.Property("estimatedbudget", th.StringType),
@@ -793,7 +806,7 @@ class TransactionStream(suiteqlStream):
         th.Property("isfinchrg", th.StringType),
         th.Property("isreversal", th.StringType),
         th.Property("journaltype", th.StringType),
-        th.Property("lastmodifiedby", th.StringType),
+        th.Property("lastmodifiedby", th.IntegerType),
         th.Property("lastmodifieddate", th.DateTimeType),
         th.Property("leadsource", th.StringType),
         th.Property("memdoc", th.StringType),
@@ -803,17 +816,17 @@ class TransactionStream(suiteqlStream):
         th.Property("nextapprover", th.StringType),
         th.Property("nextbilldate", th.DateType),
         th.Property("nexus", th.StringType),
-        th.Property("number", th.StringType),
-        th.Property("opportunity", th.StringType),
+        th.Property("number", th.IntegerType),
+        th.Property("opportunity", th.IntegerType),
         th.Property("ordpicked", th.StringType),
         th.Property("ordreceived", th.StringType),
         th.Property("otherrefnum", th.StringType),
-        th.Property("partner", th.StringType),
+        th.Property("partner", th.IntegerType),
         th.Property("paymenthold", th.StringType),
-        th.Property("paymentmethod", th.StringType),
-        th.Property("paymentoption", th.StringType),
+        th.Property("paymentmethod", th.IntegerType),
+        th.Property("paymentoption", th.IntegerType),
         th.Property("posting", th.StringType),
-        th.Property("postingperiod", th.StringType),
+        th.Property("postingperiod", th.IntegerType),
         th.Property("printedpickingticket", th.StringType),
         th.Property("probability", th.StringType),
         th.Property("projectedtotal", th.StringType),
@@ -834,13 +847,13 @@ class TransactionStream(suiteqlStream):
         th.Property("status", th.StringType),
         th.Property("terms", th.StringType),
         th.Property("title", th.StringType),
-        th.Property("tosubsidiary", th.StringType),
+        th.Property("tosubsidiary", th.IntegerType),
         th.Property("totalcostestimate", th.StringType),
         th.Property("trandate", th.DateType),
         th.Property("trandisplayname", th.StringType),
         th.Property("tranid", th.StringType),
         th.Property("tranisvsoebundle", th.StringType),
-        th.Property("number", th.StringType),
+        th.Property("vendor", th.IntegerType),
         th.Property("type", th.StringType),
         th.Property("typebaseddocumentnumber", th.StringType),
         th.Property("userevenuearrangement", th.StringType),
@@ -849,7 +862,7 @@ class TransactionStream(suiteqlStream):
         th.Property("voided", th.StringType),
         th.Property("website", th.StringType),
         th.Property("weightedtotal", th.StringType),
-        th.Property("winlossreason", th.StringType),
+        th.Property("winlossreason", th.IntegerType),
     ).to_dict()
 
 
@@ -903,20 +916,20 @@ class TransactionLineStream(suiteqlStream):
         th.Property("amortizationsched", th.StringType),
         th.Property("amortizstartdate", th.StringType),
         th.Property("billeddate", th.DateType),
-        th.Property("billingschedule", th.StringType),
+        th.Property("billingschedule", th.IntegerType),
         th.Property("billvariancestatus", th.StringType),
-        th.Property("category", th.StringType),
-        th.Property("class", th.StringType),
+        th.Property("category", th.IntegerType),
+        th.Property("class", th.IntegerType),
         th.Property("cleared", th.BooleanType),
         th.Property("cleareddate", th.DateType),
         th.Property("closedate", th.StringType),
         th.Property("commitinventory", th.StringType),
         th.Property("commitmentfirm", th.BooleanType),
-        th.Property("costestimate", th.StringType),
-        th.Property("costestimaterate", th.StringType),
+        th.Property("costestimate", th.NumberType),
+        th.Property("costestimaterate", th.NumberType),
         th.Property("costestimatetype", th.StringType),
         th.Property("createdfrom", th.StringType),
-        th.Property("creditforeignamount", th.StringType),
+        th.Property("creditforeignamount", th.NumberType),
         th.Property("cseg_conference", th.StringType),
         th.Property("custcol1", th.DateType),
         th.Property("custcol10", th.StringType),
@@ -1000,25 +1013,25 @@ class TransactionLineStream(suiteqlStream):
         th.Property("custcol_swv_cr_ms_pricing_option", th.StringType),
         th.Property("custcol_termline", th.StringType),
         th.Property("custcol_vendor", th.StringType),
-        th.Property("debitforeignamount", th.StringType),
-        th.Property("department", th.StringType),
+        th.Property("debitforeignamount", th.NumberType),
+        th.Property("department", th.IntegerType),
         th.Property("documentnumber", th.StringType),
         th.Property("donotdisplayline", th.BooleanType),
         th.Property("eliminate", th.BooleanType),
-        th.Property("entity", th.StringType),
-        th.Property("estgrossprofit", th.StringType),
-        th.Property("estgrossprofitpercent", th.StringType),
-        th.Property("estimatedamount", th.StringType),
+        th.Property("entity", th.IntegerType),
+        th.Property("estgrossprofit", th.NumberType),
+        th.Property("estgrossprofitpercent", th.NumberType),
+        th.Property("estimatedamount", th.NumberType),
         th.Property("expectedreceiptdate", th.DateType),
-        th.Property("expenseaccount", th.StringType),
+        th.Property("expenseaccount", th.IntegerType),
         th.Property("foreignamount", th.NumberType),
-        th.Property("foreignamountpaid", th.StringType),
-        th.Property("foreignamountunpaid", th.StringType),
-        th.Property("foreignpaymentamountunused", th.StringType),
-        th.Property("foreignpaymentamountused", th.StringType),
+        th.Property("foreignamountpaid", th.NumberType),
+        th.Property("foreignamountunpaid", th.NumberType),
+        th.Property("foreignpaymentamountunused", th.NumberType),
+        th.Property("foreignpaymentamountused", th.NumberType),
         th.Property("fulfillable", th.BooleanType),
-        th.Property("fxamountlinked", th.StringType),
-        th.Property("fxvsoeprice", th.StringType),
+        th.Property("fxamountlinked", th.NumberType),
+        th.Property("fxvsoeprice", th.NumberType),
         th.Property("id", th.IntegerType, required=True),
         th.Property("invsoebundle", th.BooleanType),
         th.Property("isbillable", th.BooleanType),
@@ -1029,20 +1042,20 @@ class TransactionLineStream(suiteqlStream):
         th.Property("isfxvariance", th.BooleanType),
         th.Property("isinventoryaffecting", th.BooleanType),
         th.Property("isrevrectransaction", th.BooleanType),
-        th.Property("item", th.StringType),
-        th.Property("itemtype", th.StringType),
+        th.Property("item", th.IntegerType),
+        th.Property("itemtype", th.IntegerType),
         th.Property("linelastmodifieddate", th.DateTimeType),
         th.Property("linesequencenumber", th.IntegerType),
-        th.Property("location", th.StringType),
+        th.Property("location", th.IntegerType),
         th.Property("mainline", th.BooleanType),
         th.Property("matchbilltoreceipt", th.BooleanType),
         th.Property("memo", th.StringType),
         th.Property("needsrevenueelement", th.BooleanType),
-        th.Property("netamount", th.StringType),
+        th.Property("netamount", th.NumberType),
         th.Property("oldcommitmentfirm", th.BooleanType),
         th.Property("orderpriority", th.StringType),
-        th.Property("paymentmethod", th.StringType),
-        th.Property("price", th.StringType),
+        th.Property("paymentmethod", th.IntegerType),
+        th.Property("price", th.IntegerType),
         th.Property("processedbyrevcommit", th.BooleanType),
         th.Property("quantity", th.StringType),
         th.Property("quantitybackordered", th.StringType),
@@ -1264,6 +1277,7 @@ class VendorStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
 
 
 class VendorCategoryStream(suiteqlStream):
@@ -1343,6 +1357,7 @@ class EmployeeStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links", "basewage", "basewagetype", "billingclass", "billpay", "bonustarget", "bonustargetcomment", "bonustargetpayfrequency", "bonustargettype", "commissionpaymentpreference", "compensationcurrency", "defaultjobresourcerole", "directdeposit", "eligibleforcommission", "employeeftestatus", "enabledeductionlimits", "inheritiprules", "ipaddressrule", "isjobmanager", "isjobresource", "job", "jobemploymentcategory", "laborcategory", "laborcost", "lastpaiddate", "overtimepolicy", "payfrequency", "rate", "salesrole", "startdatetimeoffcalc", "targetutilization", "terminationcategory", "terminationdetails", "terminationreason", "terminationregretted", "timeoffplan", "useperquest", "usetimedata", "workassignment", "workplace"]
     replication_key = "lastmodifieddate"
+    replication_method = "FULL_TABLE"
 
 
 
@@ -1473,6 +1488,7 @@ class ContractStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodified"
+    replication_method = "FULL_TABLE"
 
 
 class ContractItemStream(suiteqlStream):
@@ -1486,3 +1502,4 @@ class ContractItemStream(suiteqlStream):
     primary_keys = ["id"]
     skip_attributes = ["links"]
     replication_key = "lastmodified"
+    replication_method = "FULL_TABLE"

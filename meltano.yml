@@ -39,64 +39,190 @@ plugins:
           # __alias__: account
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
-    #     accounthierarchylevels:
-    #       id: int(id)
-    #     accountingbook:
-    #       id: int(id)
-    #     accountingperiod:
-    #       accountingperiod: int(accountingperiod)
-    #     accountingperiodfiscalcalendars:
-    #       id: int(id)
-    #     accounttype:
-    #       internalid: int(internalid)
-    #     automationsystems:
-    #       id: int(id)
-    #     classification:
-    #       id: int(id)
-    #     consolidatedexchangerate:
-    #       id: int(id)
-    #     contractitems:
-    #       id: int(id)
-    #     contracts:
-    #       id: int(id)
-    #     contractstatus:
-    #       id: int(id)
-    #     currency:
-    #       id: int(id)
-    #     customers:
-    #       id: int(id)
-    #     department:
-    #       id: int(id)
-    #     employees:
-    #       id: int(id)
-    #     entity:
-    #       id: int(id)
-    #     entityaddress:
-    #       nkey: int(nkey)
-    #       recordowner: int(recordowner)
-    #     item:
-    #       id: int(id)
-    #     journalentries:
-    #       id: int(id)
-    #     location:
-    #       id: int(id)
-    #     locationmainaddress:
-    #       nkey: int(nkey)
-    #       recordowner: int(recordowner)
-    #     productids:
-    #       id: int(id)
-    #     productstanding:
-    #       id: int(id)
-    #     productstatus:
-    #       id: int(id)
-    #     psms:
-    #       id: int(id)
-    #     subsidiary:
-    #       id: int(id)
+        accounthierarchylevels:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        accountingbook:
+          id: int(id)
+          effectiveperiod: "int(record['effectiveperiod']) if 'effectiveperiod' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        accountingbooksubsidiaries:
+          accountingbook: "int(record['accountingbook']) if 'accountingbook' in record.keys() else None"
+          subsidiary: "int(record['subsidiary']) if 'subsidiary' in record.keys() else None"
+        accountingperiod:
+          id: int(id)
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        accountingperiodfiscalcalendars:
+          accountingperiod: "int(record['accountingperiod']) if 'accountingperiod' in record.keys() else None"
+          fiscalcalendar: "int(record['fiscalcalendar']) if 'fiscalcalendar' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+        accounttype:
+          internalid: int(internalid)
+          seqnum: "int(record['seqnum']) if 'seqnum' in record.keys() else None"
+          hash_id: md5(str(internalid))
+          __key_properties__: ["hash_id"]
+        automationsystems:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        classification:
+          id: int(id)
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        consolidatedexchangerate:
+          id: int(id)
+          accountingbook: "int(record['accountingbook']) if 'accountingbook' in record.keys() else None"
+          averagerate: "float(record['averagerate']) if 'averagerate' in record.keys() else None"
+          currentrate: "float(record['currentrate']) if 'currentrate' in record.keys() else None"
+          fromcurrency: "int(record['fromcurrency']) if 'fromcurrency' in record.keys() else None"
+          fromsubsidiary: "int(record['fromsubsidiary']) if 'fromsubsidiary' in record.keys() else None"
+          historicalrate: "float(record['historicalrate']) if 'historicalrate' in record.keys() else None"
+          postingperiod: "int(record['postingperiod']) if 'postingperiod' in record.keys() else None"
+          tocurrency: "int(record['tocurrency']) if 'tocurrency' in record.keys() else None"
+          tosubsidiary: "int(record['tosubsidiary']) if 'tosubsidiary' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        contractitems:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        contracts:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        contractstatus:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        currency:
+          id: int(id)
+          currencyprecision: "int(record['currencyprecision']) if 'currencyprecision' in record.keys() else None"
+          exchangerate: "float(record['exchangerate']) if 'exchangerate' in record.keys() else None"
+          symbolplacement: "int(record['symbolplacement']) if 'symbolplacement' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        customers:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        department:
+          id: int(id)
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        employees:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        entity:
+          id: int(id)
+          contact: "int(record['contact']) if 'contact' in record.keys() else None"
+          customer: "int(record['customer']) if 'customer' in record.keys() else None"
+          employee: "int(record['employee']) if 'employee' in record.keys() else None"
+          entitynumber: "int(record['entitynumber']) if 'entitynumber' in record.keys() else None"
+          group: "int(record['group']) if 'group' in record.keys() else None"
+          othername: "int(record['othername']) if 'othername' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          partner: "int(record['partner']) if 'partner' in record.keys() else None"
+          project: "int(record['project']) if 'project' in record.keys() else None"
+          toplevelparent: "int(record['toplevelparent']) if 'toplevelparent' in record.keys() else None"
+          vendor: "int(record['vendor']) if 'vendor' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        entityaddress:
+          nkey: int(nkey)
+          recordowner: int(recordowner)
+          hash_id: md5(str(nkey))
+          __key_properties__: ["hash_id"]
+        item:
+          id: int(id)
+          billexchratevarianceacct: "int(record['billexchratevarianceacct']) if 'billexchratevarianceacct' in record.keys() else None"
+          billpricevarianceacct: "int(record['billpricevarianceacct']) if 'billpricevarianceacct' in record.keys() else None"
+          billqtyvarianceacct: "int(record['billqtyvarianceacct']) if 'billqtyvarianceacct' in record.keys() else None"
+          class: "int(record['class']) if 'class' in record.keys() else None"
+          deferralaccount: "int(record['deferralaccount']) if 'deferralaccount' in record.keys() else None"
+          deferredrevenueaccount: "int(record['deferredrevenueaccount']) if 'deferredrevenueaccount' in record.keys() else None"
+          department: "int(record['department']) if 'department' in record.keys() else None"
+          expenseaccount: "int(record['expenseaccount']) if 'expenseaccount' in record.keys() else None"
+          gainlossaccount: "int(record['gainlossaccount']) if 'gainlossaccount' in record.keys() else None"
+          incomeaccount: "int(record['incomeaccount']) if 'incomeaccount' in record.keys() else None"
+          intercodefrevaccount: "int(record['intercodefrevaccount']) if 'intercodefrevaccount' in record.keys() else None"
+          intercoexpenseaccount: "int(record['intercoexpenseaccount']) if 'intercoexpenseaccount' in record.keys() else None"
+          intercoincomeaccount: "int(record['intercoincomeaccount']) if 'intercoincomeaccount' in record.keys() else None"
+          location: "int(record['location']) if 'location' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          subsidiary: "int(record['subsidiary']) if 'subsidiary' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+
+        journalentries:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        location:
+          id: int(id)
+          locationtype: "int(record['locationtype']) if 'locationtype' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        locationmainaddress:
+          nkey: int(nkey)
+          recordowner: int(recordowner)
+          hash_id: md5(str(nkey))
+          __key_properties__: ["hash_id"]
+        productids:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        productstanding:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        productstatus:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        psms:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        subsidiary:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
     #     transaction_lines:
     #       uniquekey: int(uniquekey)
-        # transaction:
-        #   id: int(id)
+        transaction:
+          id: int(id)
+          approvalstatus: "int(record['approvalstatus']) if 'approvalstatus' in record.keys() else None"
+          balsegstatus: "int(record['balsegstatus']) if 'balsegstatus' in record.keys() else None"
+          bulkprocsubmission: "int(record['bulkprocsubmission']) if 'bulkprocsubmission' in record.keys() else None"
+          buyingreason: "int(record['buyingreason']) if 'buyingreason' in record.keys() else None"
+          buyingtimeframe: "int(record['buyingtimeframe']) if 'buyingtimeframe' in record.keys() else None"
+          createdby: "int(record['createdby']) if 'createdby' in record.keys() else None"
+          cseg_conference: "int(record['cseg_conference']) if 'cseg_conference' in record.keys() else None"
+          currency: "int(record['currency']) if 'currencycseg_conference' in record.keys() else None"
+          employee: "int(record['employee']) if 'employee' in record.keys() else None"
+          entity: "int(record['entity']) if 'entity' in record.keys() else None"
+          entitystatus: "int(record['entitystatus']) if 'entitystatus' in record.keys() else None"
+          lastmodifiedby: "int(record['lastmodifiedby']) if 'lastmodifiedby' in record.keys() else None"
+          number: "int(record['number']) if 'number' in record.keys() else None"
+          opportunity: "int(record['opportunity']) if 'opportunity' in record.keys() else None"
+          partner: "int(record['partner']) if 'partner' in record.keys() else None"
+          paymentmethod: "int(record['paymentmethod']) if 'paymentmethod' in record.keys() else None"
+          paymentoption: "int(record['paymentoption']) if 'paymentoption' in record.keys() else None"
+          postingperiod: "int(record['postingperiod']) if 'postingperiod' in record.keys() else None"
+          tosubsidiary: "int(record['tosubsidiary']) if 'tosubsidiary' in record.keys() else None"
+          vendor: "int(record['vendor']) if 'vendor' in record.keys() else None"
+          winlossreason: "int(record['winlossreason']) if 'winlossreason' in record.keys() else None"
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+          
         # transactionaccountingline:
         #   account: int(account)
         #   accountingbook: int(accountingbook)
@@ -122,20 +248,20 @@ plugins:
           #amortizationsched: "int(config[amortizationsched]) if 'amortizationsched' in config else None"
           # amortizstartdate: "str(config[amortizstartdate]) if 'amortizstartdate' in config else None"
           # billeddate: "config[billeddate] if 'billeddate' in config else None"
-          # billingschedule: "int(config[billingschedule]) if 'billingschedule' in config else None"
+          billingschedule: "int(record['billingschedule']) if 'billingschedule' in record.keys() else None"
           # # billvariancestatus: "str(config[billvariancestatus]) if 'billvariancestatus' in config else None"
-          # #category: "int(config[category]) if 'category' in config else None"
-          # #class: "int(config['class']) if 'class' in config else None"
+          category: "int(record['category']) if 'category' in record.keys() else None"
+          class: "int(record['class']) if 'class' in record.keys() else None"
           # # cleared: "config[cleared] if 'cleared' in config else None"
           # # cleareddate: "config[cleareddate] if 'cleareddate' in config else None"
           # # closedate: "str(config[closedate]) if 'closedate' in config else None"
           # #commitinventory: "int(config[commitinventory]) if 'commitinventory' in config else None"
           # # commitmentfirm: "config[commitmentfirm] if 'commitmentfirm' in config else None"
-          # costestimate: "float(config[costestimate]) if 'costestimate' in config else None"
-          # costestimaterate: "float(config[costestimaterate]) if 'costestimaterate' in config else None"
+          costestimate: "float(record['costestimate']) if 'costestimate' in record.keys() else None"
+          costestimaterate: "float(record['costestimaterate']) if 'costestimaterate' in record.keys() else None"
           # # costestimatetype: "str(config[costestimatetype]) if 'costestimatetype' in config else None"
           # createdfrom: "int(config[createdfrom]) if 'createdfrom' in config else None"
-          # creditforeignamount: "float(config[creditforeignamount]) if 'creditforeignamount' in config else None"
+          creditforeignamount: "float(record['creditforeignamount']) if 'creditforeignamount' in record.keys() else None"
           # cseg_conference: "int(config[cseg_conference]) if 'cseg_conference' in config else None"
           # # custcol1: "config[custcol1] if 'custcol1' in config else None"
           # # custcol10: "int(config[custcol10]) if 'custcol10' in config else None"
@@ -220,24 +346,24 @@ plugins:
           # custcol_termline: "int(config[custcol_termline]) if 'custcol_termline' in config else None"
           # custcol_vendor: "int(config[custcol_vendor]) if 'custcol_vendor' in config else None"
           # debitforeignamount: "float(config[debitforeignamount]) if 'debitforeignamount' in config else None"
-          # department: "int(config[department]) if 'department' in config else None"
+          department: "int(record['department']) if 'department' in record.keys() else None"
           # documentnumber: "str(config[documentnumber]) if 'documentnumber' in config else None"
           # donotdisplayline: "config[donotdisplayline] if 'donotdisplayline' in config else None"
           # eliminate: "config[eliminate] if 'eliminate' in config else None"
-          # entity: "int(config[entity]) if 'entity' in config else None"
-          # estgrossprofit: "float(config[estgrossprofit]) if 'estgrossprofit' in config else None"
-          # estgrossprofitpercent: "float(config[estgrossprofitpercent]) if 'estgrossprofitpercent' in config else None"
-          #estimatedamount: "float(config[estimatedamount]) if 'estimatedamount' in config else None"
+          entity: "int(record['entity']) if 'entity' in record.keys() else None"
+          estgrossprofit: "float(record['foreignamount']) if 'foreignamount' in record.keys() else None"
+          estgrossprofitpercent: "float(record['foreignamount']) if 'foreignamount' in record.keys() else None"
+          estimatedamount: "float(record['foreignamount']) if 'foreignamount' in record.keys() else None"
           # expectedreceiptdate: "config[expectedreceiptdate] if 'expectedreceiptdate' in config else None"
-          # expenseaccount: "int(config[expenseaccount]) if 'expenseaccount' in config else None"
+          expenseaccount: "int(record['expenseaccount']) if 'expenseaccount' in record.keys() else None"
           foreignamount: "float(record['foreignamount']) if 'foreignamount' in record.keys() else None"
-          # foreignamountpaid: "float(config[foreignamountpaid]) if 'foreignamountpaid' in config else None"
-          # foreignamountunpaid: "float(config[foreignamountunpaid]) if 'foreignamountunpaid' in config else None"
-          # foreignpaymentamountunused: "float(config[foreignpaymentamountunused]) if 'foreignpaymentamountunused' in config else None"
-          # foreignpaymentamountused: "float(config[foreignpaymentamountused]) if 'foreignpaymentamountused' in config else None"
+          foreignamountpaid: "float(record['foreignamountpaid']) if 'foreignamountpaid' in record.keys() else None"
+          foreignamountunpaid: "float(record['foreignamountunpaid']) if 'foreignamountunpaid' in record.keys() else None"
+          foreignpaymentamountunused: "float(record['foreignpaymentamountunused']) if 'foreignpaymentamountunused' in record.keys() else None"
+          foreignpaymentamountused: "float(record['foreignpaymentamountused']) if 'foreignpaymentamountused' in record.keys() else None"
           # fulfillable: "config[fulfillable] if 'fulfillable' in config else None"
-          #fxamountlinked: "float(config[fxamountlinked]) if 'fxamountlinked' in config else None"
-          #fxvsoeprice: "float(config[fxvsoeprice]) if 'fxvsoeprice' in config else None"
+          fxamountlinked: "float(record['fxamountlinked']) if 'fxamountlinked' in record.keys() else None"
+          fxvsoeprice: "float(record['fxvsoeprice']) if 'fxvsoeprice' in record.keys() else None"
           id: int(id)
           # invsoebundle: "config[invsoebundle] if 'invsoebundle' in config else None"
           # isbillable: "config[isbillable] if 'isbillable' in config else None"
@@ -248,20 +374,20 @@ plugins:
           # isfxvariance: "config[isfxvariance] if 'isfxvariance' in config else None"
           # isinventoryaffecting: "config[isinventoryaffecting] if 'isinventoryaffecting' in config else None"
           # isrevrectransaction: "config[isrevrectransaction] if 'isrevrectransaction' in config else None"
-          #item: "int(config['item']) if 'item' in config else 0"
-          #itemtype: "int(config[itemtype]) if 'itemtype' in config else None"
+          item: "int(record['item']) if 'item' in record.keys() else None"
+          itemtype: "int(record['itemtype']) if 'itemtype' in record.keys() else None"
           # linelastmodifieddate: "config[linelastmodifieddate] if 'linelastmodifieddate' in config else None"
           linesequencenumber: int(linesequencenumber)
-          #location: "int(config[location]) if 'location' in config else None"
+          location: "int(record['location']) if 'location' in record.keys() else None"
           # mainline: "config[mainline] if 'mainline' in config else None"
           # matchbilltoreceipt: "config[matchbilltoreceipt] if 'matchbilltoreceipt' in config else None"
           # memo: "str(config[memo]) if 'memo' in config else None"
           # needsrevenueelement: "config[needsrevenueelement] if 'needsrevenueelement' in config else None"
-          #netamount: "float(config[netamount]) if 'netamount' in config else None"
+          netamount: "float(record['netamount']) if 'netamount' in record.keys() else None"
           # oldcommitmentfirm: "config[oldcommitmentfirm] if 'oldcommitmentfirm' in config else None"
           #orderpriority: "float(config[orderpriority]) if 'orderpriority' in config else None"
-          # paymentmethod: "int(config[paymentmethod]) if 'paymentmethod' in config else None"
-          # price: "int(config[price]) if 'price' in config else None"
+          paymentmethod: "int(record['paymentmethod']) if 'paymentmethod' in record.keys() else None"
+          price: "int(record['price']) if 'price' in record.keys() else None"
           # processedbyrevcommit: "config[processedbyrevcommit] if 'processedbyrevcommit' in config else None"
           # quantity: "float(config[quantity]) if 'quantity' in config else None"
           # quantitybackordered: "float(config[quantitybackordered]) if 'quantitybackordered' in config else None"
@@ -286,7 +412,7 @@ plugins:
           # vsoepermitdiscount: "str(config[vsoepermitdiscount]) if 'vsoepermitdiscount' in config else None"
           #vsoeprice: "float(config[vsoeprice]) if 'vsoeprice' in config else None"
           # vsoesopgroup: "str(config[vsoesopgroup]) if 'vsoesopgroup' in config else None"
-          hash_id: md5(config['hash_seed'] + str(id) + str(transaction))
+          hash_id: md5(str(id) + str(transaction))
           __key_properties__: ["hash_id"]
         transactionaccountingline:
           __source__: transactionline
@@ -311,12 +437,18 @@ plugins:
           __key_properties__: ["hash_id"]
           # exclude anything not declared
           __else__: __NULL__
-    #     vendor_types:
-    #       id: int(id)
-    #     vendorcategory:
-    #       id: int(id)
-    #     vendors:
-    #       id: int(id)
+        vendortype:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        vendorcategory:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
+        vendor:
+          id: int(id)
+          hash_id: md5(str(id))
+          __key_properties__: ["hash_id"]
       stream_map_config:
           hash_seed: 01AWZh7A6DzGm6iJZZ2T
     # metadata:
