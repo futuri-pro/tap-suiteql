@@ -250,7 +250,7 @@ plugins:
           entity: "int(record['entity']) if 'entity' in record.keys() else None"
           entitystatus: "int(record['entitystatus']) if 'entitystatus' in record.keys() else None"
           lastmodifiedby: "int(record['lastmodifiedby']) if 'lastmodifiedby' in record.keys() else None"
-          number: "int(record['number']) if 'number' in record.keys() else None"
+          number: "float(record['number']) if 'number' in record.keys() else None"
           opportunity: "int(record['opportunity']) if 'opportunity' in record.keys() else None"
           partner: "int(record['partner']) if 'partner' in record.keys() else None"
           paymentmethod: "int(record['paymentmethod']) if 'paymentmethod' in record.keys() else None"

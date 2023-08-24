@@ -1072,7 +1072,7 @@ class TransactionStream(suiteqlStream):
         th.Property("nextapprover", th.StringType),
         th.Property("nextbilldate", th.DateType),
         th.Property("nexus", th.StringType),
-        th.Property("number", th.IntegerType),
+        th.Property("number", th.NumberType),
         th.Property("opportunity", th.IntegerType),
         th.Property("ordpicked", th.StringType),
         th.Property("ordreceived", th.StringType),
