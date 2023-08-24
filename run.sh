@@ -8,7 +8,77 @@ cd /home/ubuntu/dagster-meltano/meltano-project/tap-suiteql/
 
 
 #/home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id all_except_transactions --exclude "trans*"."*" target-postgres
-TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id all_tables target-postgres
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+
+sleep 60
+
+
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=info elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
 
 
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id account --select "account"."*" target-postgres
