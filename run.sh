@@ -7,7 +7,9 @@ source venv/bin/activate
 cd /home/ubuntu/dagster-meltano/meltano-project/tap-suiteql/
 
 
-/home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id all_except_transactions --exclude "trans*"."*" target-postgres
+#/home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id all_except_transactions --exclude "trans*"."*" target-postgres
+TAP_SUITEQL_START_DATE="2018-01-01T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev --log-level=debug elt tap-suiteql --state-id all_tables target-postgres
+
 
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id account --select "account"."*" target-postgres
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id accountingbook --select "accountingbook"."*" target-postgres
@@ -44,6 +46,6 @@ cd /home/ubuntu/dagster-meltano/meltano-project/tap-suiteql/
 # /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id contractitems --select "contractitems"."*" target-postgres
 
 
-TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transaction --select "transaction"."*" target-postgres
-TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transactionaccountingline --select "transactionaccountingline"."*" target-postgres
-TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
+# TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transaction --select "transaction"."*" target-postgres
+# TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transactionaccountingline --select "transactionaccountingline"."*" target-postgres
+# TAP_SUITEQL_START_DATE="2023-08-15T00:00:00Z" /home/ubuntu/dagster-meltano/venv/bin/meltano --environment=dev  --log-level=debug elt tap-suiteql --state-id transactionline --select "transactionline"."*" target-postgres
