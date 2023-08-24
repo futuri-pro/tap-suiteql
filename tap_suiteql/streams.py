@@ -718,7 +718,7 @@ class ItemStream(suiteqlStream):
         th.Property("shippingcost", th.StringType),
         th.Property("stockdescription", th.StringType),
         th.Property("stockunit", th.StringType),
-        th.Property("subsidiary", th.IntegerType),
+        th.Property("subsidiary", th.StringType),
         th.Property("subtype", th.StringType),
         th.Property("supplyreplenishmentmethod", th.StringType),
         th.Property("totalvalue", th.StringType),

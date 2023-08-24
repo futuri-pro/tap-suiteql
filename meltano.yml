@@ -194,7 +194,7 @@ plugins:
           intercoincomeaccount: "int(record['intercoincomeaccount']) if 'intercoincomeaccount' in record.keys() else None"
           location: "int(record['location']) if 'location' in record.keys() else None"
           parent: "int(record['parent']) if 'parent' in record.keys() else None"
-          subsidiary: "int(record['subsidiary']) if 'subsidiary' in record.keys() else None"
+          #subsidiary: "int(record['subsidiary']) if 'subsidiary' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
 
