@@ -144,7 +144,7 @@ plugins:
           shippingitem: "int(record['shippingitem']) if 'shippingitem' in record.keys() else None"
           terms: "int(record['terms']) if 'terms' in record.keys() else None"
           territory: "int(record['territory']) if 'territory' in record.keys() else None"
-          unbilledorderssearch: "int(record['unbilledorderssearch']) if 'unbilledorderssearch' in record.keys() else None"
+          unbilledorderssearch: "float(record['unbilledorderssearch']) if 'unbilledorderssearch' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
 

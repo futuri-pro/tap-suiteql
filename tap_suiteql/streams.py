@@ -489,7 +489,7 @@ class CustomerStream(suiteqlStream):
         th.Property("thirdpartycountry", th.StringType),
         th.Property("thirdpartyzipcode", th.StringType),
         th.Property("title", th.StringType),
-        th.Property("unbilledorderssearch", th.IntegerType),
+        th.Property("unbilledorderssearch", th.NumberType),
         th.Property("url", th.StringType),
     ).to_dict()
 
