@@ -857,11 +857,56 @@ class SubsidiaryStream(suiteqlStream):
     name = "subsidiary"
     path = "/query/v1/suiteql"
     entity_name = "subsidiary"
-    metadata_path = "/record/v1/metadata-catalog/subsidiary"
+    #metadata_path = "/record/v1/metadata-catalog/subsidiary"
     primary_keys = ["id"]
-    skip_attributes = ["links"] #, "intercoaccount", "traninternalprefix", "custrecord_company_brn", "custrecord_company_uen", "custrecord_nspbcs_epm_application_name", "custrecord_nspbcs_epm_url", "custrecord_nspbcs_epm_username", "custrecord_pt_sub_taxonomy_reference", "custrecord_subsidiary_branch_id", "externalid", "fax", "purchaseorderamount", "purchaseorderquantity", "purchaseorderquantitydiff", "receiptamount", "receiptquantity", "receiptquantitydiff", "representingcustomer", "representingvendor", "returnaddress", "shippingaddress", "ssnortin", "state1taxnumber", "tranprefix" ]
+    #skip_attributes = ["links"] #, "intercoaccount", "traninternalprefix", "custrecord_company_brn", "custrecord_company_uen", "custrecord_nspbcs_epm_application_name", "custrecord_nspbcs_epm_url", "custrecord_nspbcs_epm_username", "custrecord_pt_sub_taxonomy_reference", "custrecord_subsidiary_branch_id", "externalid", "fax", "purchaseorderamount", "purchaseorderquantity", "purchaseorderquantitydiff", "receiptamount", "receiptquantity", "receiptquantitydiff", "representingcustomer", "representingvendor", "returnaddress", "shippingaddress", "ssnortin", "state1taxnumber", "tranprefix" ]
     replication_key = "lastmodifieddate"
     replication_method = "INCREMENTAL"
+    schema = th.PropertiesList(
+        th.Property("country", th.StringType),
+        th.Property("currency", th.StringType),
+        th.Property("custrecord_company_brn", th.StringType),
+        th.Property("custrecord_company_uen", th.StringType),
+        th.Property("custrecord_nspbcs_epm_application_name", th.StringType),
+        th.Property("custrecord_nspbcs_epm_url", th.StringType),
+        th.Property("custrecord_nspbcs_epm_username", th.StringType),
+        th.Property("custrecord_pt_sub_taxonomy_reference", th.StringType),
+        th.Property("custrecord_subsidiary_branch_id", th.StringType),
+        th.Property("dropdownstate", th.StringType),
+        th.Property("edition", th.StringType),
+        th.Property("email", th.StringType),
+        th.Property("externalid", th.StringType),
+        th.Property("fax", th.StringType),
+        th.Property("federalidnumber", th.StringType),
+        th.Property("fiscalcalendar", th.StringType),
+        th.Property("fullname", th.StringType),
+        th.Property("glimpactlocking", th.StringType),
+        th.Property("id", th.IntegerType),
+        th.Property("iselimination", th.StringType),
+        th.Property("isinactive", th.StringType),
+        th.Property("languagelocale", th.StringType),
+        th.Property("lastmodifieddate", th.DateTimeType),
+        th.Property("legalname", th.StringType),
+        th.Property("mainaddress", th.StringType),
+        th.Property("name", th.StringType),
+        th.Property("parent", th.StringType),
+        th.Property("purchaseorderamount", th.StringType),
+        th.Property("purchaseorderquantity", th.StringType),
+        th.Property("purchaseorderquantitydiff", th.StringType),
+        th.Property("receiptamount", th.StringType),
+        th.Property("receiptquantity", th.StringType),
+        th.Property("receiptquantitydiff", th.StringType),
+        th.Property("representingcustomer", th.StringType),
+        th.Property("representingvendor", th.StringType),
+        th.Property("returnaddress", th.StringType),
+        th.Property("shippingaddress", th.StringType),
+        th.Property("showsubsidiaryname", th.StringType),
+        th.Property("ssnortin", th.StringType),
+        th.Property("state", th.StringType),
+        th.Property("state1taxnumber", th.StringType),
+        th.Property("tranprefix", th.StringType),
+        th.Property("url", th.StringType),
+    ).to_dict()
 
 
 class TransactionStream(suiteqlStream):
