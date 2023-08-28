@@ -232,6 +232,21 @@ plugins:
           __key_properties__: ["hash_id"]
         subsidiary:
           id: int(id)
+          fiscalcalendar: "int(record['fiscalcalendar']) if 'fiscalcalendar' in record.keys() else None"
+          currency: "int(record['currency']) if 'currency' in record.keys() else None"
+          custrecord_pt_sub_taxonomy_reference: "int(record['custrecord_pt_sub_taxonomy_reference']) if 'custrecord_pt_sub_taxonomy_reference' in record.keys() else None"
+          mainaddress: "int(record['mainaddress']) if 'mainaddress' in record.keys() else None"
+          parent: "int(record['parent']) if 'parent' in record.keys() else None"
+          purchaseorderamount: "float(record['purchaseorderamount']) if 'purchaseorderamount' in record.keys() else None"
+          purchaseorderquantity: "float(record['purchaseorderquantity']) if 'purchaseorderquantity' in record.keys() else None"
+          purchaseorderquantitydiff: "float(record['purchaseorderquantitydiff']) if 'purchaseorderquantitydiff' in record.keys() else None"
+          receiptamount: "float(record['receiptamount']) if 'receiptamount' in record.keys() else None"
+          receiptquantity: "float(record['receiptquantity']) if 'receiptquantity' in record.keys() else None"
+          receiptquantitydiff: "float(record['receiptquantitydiff']) if 'receiptquantitydiff' in record.keys() else None"
+          representingcustomer: "int(record['representingcustomer']) if 'representingcustomer' in record.keys() else None"
+          representingvendor: "int(record['representingvendor']) if 'representingvendor' in record.keys() else None"
+          returnaddress: "int(record['returnaddress']) if 'returnaddress' in record.keys() else None"
+          shippingaddress: "int(record['shippingaddress']) if 'shippingaddress' in record.keys() else None"
           hash_id: md5(str(id))
           __key_properties__: ["hash_id"]
     #     transaction_lines:
