@@ -624,5 +624,24 @@ plugins:
 
 environments:
   - name: dev
+    config:
+      plugins:
+        extractors:
+        - name: tap-hubspot
+          select:
+          - '!email_events.*'
+          - campaigns.*
+          - companies.*
+          - contact_lists.*
+          - contacts.*
+          - contacts_by_company.*
+          - deal_pipelines.*
+          - deals.*
+          - engagements.*
+          - forms.*
+          - owners.*
+          - '!subscription_changes.*'
+          - '!tickets.*'
+          - workflows.*
   - name: staging
   - name: prod
