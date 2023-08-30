@@ -676,6 +676,8 @@ environments:
           - '!contacts.property_tiktok_handl*'
           - '!contacts.properties.youtube_channel_ur*'
           - '!contacts.property_youtube_channel_ur*'
+          - '!contacts.properties.ns_*'
+          - '!contacts.property_ns_*'
           - contacts_by_company.*
           - deal_pipelines.*
           - deals.*
