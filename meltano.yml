@@ -636,7 +636,7 @@ environments:
           - contacts.*
           - '!contacts.*.hs_email_optout*'
           - '!contacts.property_hs_email_optout*'
-          - '!contacts.*.ip_*'
+          - '!contacts.propert*ip_*'
           # - '!contacts.property_ip_*'
           - '!contacts.properties.twitter*'
           - '!contacts.property_twitter*'
