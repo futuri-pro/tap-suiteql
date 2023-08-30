@@ -640,6 +640,10 @@ environments:
           - '!contacts.property_ip_*'
           - '!contacts.properties.twitter*'
           - '!contacts.property_twitter*'
+          - '!contacts.properties.hs_avatar_*'
+          - '!contacts.property_hs_avatar_*'
+          - '!contacts.properties.facebook*'
+          - '!contacts.property_facebook_*'
           - contacts_by_company.*
           - deal_pipelines.*
           - deals.*
