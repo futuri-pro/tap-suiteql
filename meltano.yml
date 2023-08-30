@@ -644,6 +644,20 @@ environments:
           - '!contacts.property_hs_avatar_*'
           - '!contacts.properties.facebook*'
           - '!contacts.property_facebook_*'
+          - '!contacts.properties.sms_opt_in_out'
+          - '!contacts.property_sms_opt_in_out'
+          - '!contacts.properties.last_received_sm*'
+          - '!contacts.properties.last_sent_sm*'
+          - '!contacts.properties.sms_opt_in_ou*'
+          - '!contacts.properties.sms_opt_out_dat*'
+          - '!contacts.properties.total_received_sm*'
+          - '!contacts.properties.total_sent_sm*'
+          - '!contacts.property_last_received_sm*'
+          - '!contacts.property_last_sent_sm*'
+          - '!contacts.property_sms_opt_in_ou*'
+          - '!contacts.property_sms_opt_out_dat*'
+          - '!contacts.property_total_received_sm*'
+          - '!contacts.property_total_sent_sm*'
           - contacts_by_company.*
           - deal_pipelines.*
           - deals.*
