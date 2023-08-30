@@ -635,6 +635,9 @@ environments:
           - contact_lists.*
           - contacts.*
           - '!contacts.*.hs_email_optout*'
+          - '!contacts.property_hs_email_optout*'
+          - '!contacts.*.ip_*'
+          - '!contacts.property_ip_*'
           - contacts_by_company.*
           - deal_pipelines.*
           - deals.*
