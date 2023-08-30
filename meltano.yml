@@ -638,6 +638,8 @@ environments:
           - '!contacts.property_hs_email_optout*'
           - '!contacts.*.ip_*'
           - '!contacts.property_ip_*'
+          - '!contacts.properties.twitter*'
+          - '!contacts.property_twitter'
           - contacts_by_company.*
           - deal_pipelines.*
           - deals.*
