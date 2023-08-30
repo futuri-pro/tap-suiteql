@@ -516,12 +516,12 @@ plugins:
     #   "*_full":
     #     replication-method: FULL_TABLE
   - name: tap-hubspot
-  variant: singer-io
-  pip_url: git+https://github.com/singer-io/tap-hubspot.git
-  config:
-    client_id: 333e7518-25f2-412c-920f-2aa8a55a9bf9
-    redirect_uri: http://localhost:52316/
-    start_date: '2017-01-01T00:00:00Z'
+    variant: singer-io
+    pip_url: git+https://github.com/singer-io/tap-hubspot.git
+    config:
+      client_id: 333e7518-25f2-412c-920f-2aa8a55a9bf9
+      redirect_uri: http://localhost:52316/
+      start_date: '2017-01-01T00:00:00Z'
 
   loaders:
   - name: target-jsonl
