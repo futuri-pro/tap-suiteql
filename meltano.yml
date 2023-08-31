@@ -629,63 +629,64 @@ environments:
         extractors:
         - name: tap-hubspot
           select:
-          - '!email_events.*'
-          - campaigns.*
+          # - '!email_events.*'
+          # - campaigns.*
           - companies.*
-          - contact_lists.*
-          - contacts.*
-          - '!contacts.*.hs_email_optout*'
-          - '!contacts.property_hs_email_optout*'
-          - '!contacts.*.ip_*'
-          - '!contacts.property_ip_*'
-          - '!contacts.properties.twitter*'
-          - '!contacts.property_twitter*'
-          - '!contacts.properties.hs_avatar_*'
-          - '!contacts.property_hs_avatar_*'
-          - '!contacts.properties.facebook*'
-          - '!contacts.property_facebook_*'
-          - '!contacts.properties.sms_opt_in_out'
-          - '!contacts.property_sms_opt_in_out'
-          - '!contacts.properties.last_received_sm*'
-          - '!contacts.properties.last_sent_sm*'
-          - '!contacts.properties.sms_opt_in_ou*'
-          - '!contacts.properties.sms_opt_out_dat*'
-          - '!contacts.properties.total_received_sm*'
-          - '!contacts.properties.total_sent_sm*'
-          - '!contacts.property_last_received_sm*'
-          - '!contacts.property_last_sent_sm*'
-          - '!contacts.property_sms_opt_in_ou*'
-          - '!contacts.property_sms_opt_out_dat*'
-          - '!contacts.property_total_received_sm*'
-          - '!contacts.property_total_sent_sm*'
-          - '!contacts.properties.link_clicks*'
-          - '!contacts.property_link_clicks*'
-          - '!contacts.properties.last_message_received_conten*'
-          - '!contacts.property_last_message_received_conten*'
-          - '!contacts.properties.link_clicks*'
-          - '!contacts.property_link_clicks*'
-          - '!contacts.properties.facebook_handl*'
-          - '!contacts.property_facebook_handl*'
-          - '!contacts.properties.instagram_handl*'
-          - '!contacts.property_instagram_handl*'
-          - '!contacts.properties.is_a_content_cloud_contac*'
-          - '!contacts.property_is_a_content_cloud_contac*'
-          - '!contacts.properties.linkedin_handl*'
-          - '!contacts.property_linkedin_handl*'
-          - '!contacts.properties.tiktok_handl*'
-          - '!contacts.property_tiktok_handl*'
-          - '!contacts.properties.youtube_channel_ur*'
-          - '!contacts.property_youtube_channel_ur*'
-          - '!contacts.properties.ns_*'
-          - '!contacts.property_ns_*'
-          - contacts_by_company.*
-          - deal_pipelines.*
-          - deals.*
-          - engagements.*
-          - forms.*
-          - owners.*
-          - '!subscription_changes.*'
-          - '!tickets.*'
-          - workflows.*
+          - '!companies.property_first_contact_createdate_timestamp_earliest_value_7*'
+          # - contact_lists.*
+          # - '!contacts.*'
+          # - '!contacts.*.hs_email_optout*'
+          # - '!contacts.property_hs_email_optout*'
+          # - '!contacts.*.ip_*'
+          # - '!contacts.property_ip_*'
+          # - '!contacts.properties.twitter*'
+          # - '!contacts.property_twitter*'
+          # - '!contacts.properties.hs_avatar_*'
+          # - '!contacts.property_hs_avatar_*'
+          # - '!contacts.properties.facebook*'
+          # - '!contacts.property_facebook_*'
+          # - '!contacts.properties.sms_opt_in_out'
+          # - '!contacts.property_sms_opt_in_out'
+          # - '!contacts.properties.last_received_sm*'
+          # - '!contacts.properties.last_sent_sm*'
+          # - '!contacts.properties.sms_opt_in_ou*'
+          # - '!contacts.properties.sms_opt_out_dat*'
+          # - '!contacts.properties.total_received_sm*'
+          # - '!contacts.properties.total_sent_sm*'
+          # - '!contacts.property_last_received_sm*'
+          # - '!contacts.property_last_sent_sm*'
+          # - '!contacts.property_sms_opt_in_ou*'
+          # - '!contacts.property_sms_opt_out_dat*'
+          # - '!contacts.property_total_received_sm*'
+          # - '!contacts.property_total_sent_sm*'
+          # - '!contacts.properties.link_clicks*'
+          # - '!contacts.property_link_clicks*'
+          # - '!contacts.properties.last_message_received_conten*'
+          # - '!contacts.property_last_message_received_conten*'
+          # - '!contacts.properties.link_clicks*'
+          # - '!contacts.property_link_clicks*'
+          # - '!contacts.properties.facebook_handl*'
+          # - '!contacts.property_facebook_handl*'
+          # - '!contacts.properties.instagram_handl*'
+          # - '!contacts.property_instagram_handl*'
+          # - '!contacts.properties.is_a_content_cloud_contac*'
+          # - '!contacts.property_is_a_content_cloud_contac*'
+          # - '!contacts.properties.linkedin_handl*'
+          # - '!contacts.property_linkedin_handl*'
+          # - '!contacts.properties.tiktok_handl*'
+          # - '!contacts.property_tiktok_handl*'
+          # - '!contacts.properties.youtube_channel_ur*'
+          # - '!contacts.property_youtube_channel_ur*'
+          # - '!contacts.properties.ns_*'
+          # - '!contacts.property_ns_*'
+          # - contacts_by_company.*
+          # - deal_pipelines.*
+          # - deals.*
+          # - engagements.*
+          # - forms.*
+          # - owners.*
+          # - '!subscription_changes.*'
+          # - '!tickets.*'
+          # - workflows.*
   - name: staging
   - name: prod
